@@ -1,25 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using Excel = Microsoft.Office.Interop.Excel;
-using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Excel;
-using System.Windows.Forms;
-
-namespace ExcelAddIn
+﻿namespace ExcelAddIn
 {
     public partial class ThisAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            MessageBox.Show("Excel - ThisAddin_Startup");
+            InitializeRibbonUI();
+
+            if (Common.EnableAppEvents)
+            {
+                if (Common.AppEvents == null)
+                {
+                    Common.AppEvents = new Events.ExcelAppEvents();
+                    Common.AppEvents.ExcelApplication = Globals.ThisAddIn.Application;
+                }
+            }
+            else
+            {
+                Common.AppEvents = null;
+            }
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             //MessageBox.Show("Excel - ThisAddin_Shutdown");
+        }
+
+        void InitializeRibbonUI()
+        {
+            Globals.Ribbons.Ribbon.rgDebug.Visible = Common.DeveloperMode = false;
+
+            // NOTE(crhodes)
+            // Needed for several events handled by this Addin
+            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = true;
+
+            // NOTE(crhodes)
+            // No need to display during normal operation.
+            // More for understanding what Visio is doing during development.
+            Globals.Ribbons.Ribbon.rcbDisplayEvents.Checked = Common.DisplayEvents = false;
+            Globals.Ribbons.Ribbon.rcbDisplayChattyEvents.Checked = Common.DisplayChattyEvents = false;
         }
 
         #region VSTO generated code

@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using Visio = Microsoft.Office.Interop.Visio;
-using Office = Microsoft.Office.Core;
-using System.Windows.Forms;
-using Microsoft.Office.Interop.Visio;
-using VNC.VSTOAddIn;
-
-namespace VisioAddIn
+﻿namespace VisioAddIn
 {
     public partial class ThisAddIn
     {
@@ -19,7 +8,7 @@ namespace VisioAddIn
 
             InitializeRibbonUI();
 
-            if (Common.HasAppEvents)
+            if (Common.EnableAppEvents)
             {
                 if (Common.AppEvents == null)
                 {
@@ -45,7 +34,7 @@ namespace VisioAddIn
 
             // NOTE(crhodes)
             // Needed for several events handled by this Addin
-            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.HasAppEvents = true;
+            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = true;
 
             // NOTE(crhodes)
             // No need to display during normal operation.

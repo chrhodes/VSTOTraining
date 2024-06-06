@@ -82,11 +82,13 @@
             // 
             this.button1.Label = "button1";
             this.button1.Name = "button1";
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Label = "button2";
             this.button2.Name = "button2";
+            this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
             // 
             // rgDebug
             // 
@@ -105,6 +107,7 @@
             this.btnDebugWindow.Label = "Debug Window";
             this.btnDebugWindow.Name = "btnDebugWindow";
             this.btnDebugWindow.ShowImage = true;
+            this.btnDebugWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDebugWindow_Click);
             // 
             // btnWatchWindow
             // 
@@ -112,26 +115,31 @@
             this.btnWatchWindow.Label = "Watch Window";
             this.btnWatchWindow.Name = "btnWatchWindow";
             this.btnWatchWindow.ShowImage = true;
+            this.btnWatchWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWatchWindow_Click);
             // 
             // rcbLogToDebugWindow
             // 
             this.rcbLogToDebugWindow.Label = "Log to Debug Window";
             this.rcbLogToDebugWindow.Name = "rcbLogToDebugWindow";
+            this.rcbLogToDebugWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbLogToDebugWindow_Click);
             // 
             // rcbEnableAppEvents
             // 
             this.rcbEnableAppEvents.Label = "Enable App Events";
             this.rcbEnableAppEvents.Name = "rcbEnableAppEvents";
+            this.rcbEnableAppEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbEnableAppEvents_Click);
             // 
             // rcbDisplayEvents
             // 
             this.rcbDisplayEvents.Label = "Display Events";
             this.rcbDisplayEvents.Name = "rcbDisplayEvents";
+            this.rcbDisplayEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayEvents_Click);
             // 
             // rcbDisplayChattyEvents
             // 
             this.rcbDisplayChattyEvents.Label = "Display Chatty Events";
             this.rcbDisplayChattyEvents.Name = "rcbDisplayChattyEvents";
+            this.rcbDisplayChattyEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayChattyEvents_Click);
             // 
             // rgHelp
             // 
@@ -144,11 +152,13 @@
             // 
             this.btnDisplayAddInInfo.Label = "Display AddInInfo";
             this.btnDisplayAddInInfo.Name = "btnDisplayAddInInfo";
+            this.btnDisplayAddInInfo.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDisplayAddInInfo_Click);
             // 
             // btnToggleDeveloperMode
             // 
             this.btnToggleDeveloperMode.Label = "Toggle Developer Mode";
             this.btnToggleDeveloperMode.Name = "btnToggleDeveloperMode";
+            this.btnToggleDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperMode_Click);
             // 
             // Ribbon
             // 

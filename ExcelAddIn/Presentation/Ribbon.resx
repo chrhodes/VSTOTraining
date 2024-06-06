@@ -120,7 +120,7 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDebugWindow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        R0lGODlhIAAgAPYAAPr6+gUFBczMzdTU1b29vSQkJOPj4/LIK/LSKlVWVNzc3PCTGiwsLKqrq1tbW8TE
+        R0lGODlhIAAgAIYAAPr6+gUFBczMzdTU1b29vSQkJOPj4/LIK/LSKlVWVNzc3PCTGiwsLKqrq1tbW8TE
         xDQ0NElJSaSlp21tbevr7AsLCz09PZSVlZugsfCvIs2IDo2QkIWFhbW1tX19fWVlZfTxXfLhLRsbG52d
         nXR0dBQUFLFaFufr/72mIMLG24iKjL7A0Yl4GLNSFk5ZYmFdIkFBQZuWNJpwFohjE7leF+DQKvTpXXeC
         ktfc81NSJcrR5jk4GkdRWN2/Ju/AHMl5F5yIGsO2JE9PT3Z9i9l8Dra9z662yqGYN01GFkA8GdScF9OB
@@ -140,7 +140,7 @@
   </data>
   <data name="btnWatchWindow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        R0lGODlhIAAfAPcAAP8A/wAAAACZAAQEBAgICBYWFiIiIjMzMzk5OYor4vD4//rr1wAAAAAAAAAAAAAA
+        R0lGODlhIAAfAIcAAP8A/wAAAACZAAQEBAgICBYWFiIiIjMzMzk5OYor4vD4//rr1wAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
