@@ -41,21 +41,21 @@
             this.group2 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
-            this.grpDebug = this.Factory.CreateRibbonGroup();
+            this.rgDebug = this.Factory.CreateRibbonGroup();
             this.btnDebugWindow = this.Factory.CreateRibbonButton();
             this.btnWatchWindow = this.Factory.CreateRibbonButton();
             this.rcbLogToDebugWindow = this.Factory.CreateRibbonCheckBox();
             this.rcbEnableAppEvents = this.Factory.CreateRibbonCheckBox();
             this.rcbDisplayEvents = this.Factory.CreateRibbonCheckBox();
             this.rcbDisplayChattyEvents = this.Factory.CreateRibbonCheckBox();
-            this.grpHelp = this.Factory.CreateRibbonGroup();
+            this.rgHelp = this.Factory.CreateRibbonGroup();
             this.btnDisplayAddInInfo = this.Factory.CreateRibbonButton();
             this.btnToggleDeveloperMode = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.tabMyCoolTab.SuspendLayout();
             this.group2.SuspendLayout();
-            this.grpDebug.SuspendLayout();
-            this.grpHelp.SuspendLayout();
+            this.rgDebug.SuspendLayout();
+            this.rgHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -73,8 +73,8 @@
             // tabMyCoolTab
             // 
             this.tabMyCoolTab.Groups.Add(this.group2);
-            this.tabMyCoolTab.Groups.Add(this.grpDebug);
-            this.tabMyCoolTab.Groups.Add(this.grpHelp);
+            this.tabMyCoolTab.Groups.Add(this.rgDebug);
+            this.tabMyCoolTab.Groups.Add(this.rgHelp);
             this.tabMyCoolTab.Label = "MyCoolStuff";
             this.tabMyCoolTab.Name = "tabMyCoolTab";
             // 
@@ -87,26 +87,26 @@
             // 
             // button1
             // 
-            this.button1.Label = "button1";
+            this.button1.Label = "Add Page and Shapes";
             this.button1.Name = "button1";
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Label = "button2";
+            this.button2.Label = "Add Footer";
             this.button2.Name = "button2";
             this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
             // 
-            // grpDebug
+            // rgDebug
             // 
-            this.grpDebug.Items.Add(this.btnDebugWindow);
-            this.grpDebug.Items.Add(this.btnWatchWindow);
-            this.grpDebug.Items.Add(this.rcbLogToDebugWindow);
-            this.grpDebug.Items.Add(this.rcbEnableAppEvents);
-            this.grpDebug.Items.Add(this.rcbDisplayEvents);
-            this.grpDebug.Items.Add(this.rcbDisplayChattyEvents);
-            this.grpDebug.Label = "Debug";
-            this.grpDebug.Name = "grpDebug";
+            this.rgDebug.Items.Add(this.btnDebugWindow);
+            this.rgDebug.Items.Add(this.btnWatchWindow);
+            this.rgDebug.Items.Add(this.rcbLogToDebugWindow);
+            this.rgDebug.Items.Add(this.rcbEnableAppEvents);
+            this.rgDebug.Items.Add(this.rcbDisplayEvents);
+            this.rgDebug.Items.Add(this.rcbDisplayChattyEvents);
+            this.rgDebug.Label = "Debug";
+            this.rgDebug.Name = "rgDebug";
             // 
             // btnDebugWindow
             // 
@@ -148,12 +148,12 @@
             this.rcbDisplayChattyEvents.Name = "rcbDisplayChattyEvents";
             this.rcbDisplayChattyEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayChattyEvents_Click);
             // 
-            // grpHelp
+            // rgHelp
             // 
-            this.grpHelp.Items.Add(this.btnDisplayAddInInfo);
-            this.grpHelp.Items.Add(this.btnToggleDeveloperMode);
-            this.grpHelp.Label = "Help";
-            this.grpHelp.Name = "grpHelp";
+            this.rgHelp.Items.Add(this.btnDisplayAddInInfo);
+            this.rgHelp.Items.Add(this.btnToggleDeveloperMode);
+            this.rgHelp.Label = "Help";
+            this.rgHelp.Name = "rgHelp";
             // 
             // btnDisplayAddInInfo
             // 
@@ -180,10 +180,10 @@
             this.tabMyCoolTab.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
-            this.grpDebug.ResumeLayout(false);
-            this.grpDebug.PerformLayout();
-            this.grpHelp.ResumeLayout(false);
-            this.grpHelp.PerformLayout();
+            this.rgDebug.ResumeLayout(false);
+            this.rgDebug.PerformLayout();
+            this.rgHelp.ResumeLayout(false);
+            this.rgHelp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,14 +196,14 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpDebug;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgDebug;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDebugWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnWatchWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbLogToDebugWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbEnableAppEvents;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbDisplayEvents;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbDisplayChattyEvents;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpHelp;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDisplayAddInInfo;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnToggleDeveloperMode;
     }

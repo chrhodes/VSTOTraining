@@ -205,6 +205,8 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Events\VisioAppEvents.cs" />
     <Compile Include="Presentation\Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -247,7 +249,6 @@
     <None Include="VisioAddIn_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Events\" />
     <Folder Include="Resources\Xaml\" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +256,12 @@
     <Content Include="Resources\Icons\VNCDeveloperMotivation.ico" />
     <Content Include="Resources\Images\DebugWindow.gif" />
     <Content Include="Resources\Images\WatchWindow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
+      <Project>{79e6e674-8833-4ab4-8bc5-a62ea1a2c30d}</Project>
+      <Name>VNC.VSTOAddIn</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
