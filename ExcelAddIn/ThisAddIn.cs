@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using System.Windows.Forms;
 
 namespace ExcelAddIn
 {
@@ -13,10 +14,12 @@ namespace ExcelAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            MessageBox.Show("Excel - ThisAddin_Startup");
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+            //MessageBox.Show("Excel - ThisAddin_Shutdown");
         }
 
         #region VSTO generated code

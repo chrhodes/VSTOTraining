@@ -15,6 +15,9 @@ Hit ThisAddIn_Startup breakpoint
 
 Review of what got created.
 
-Checked in changes, label - CreateInitialAddins
+Created Tag - CreateInitialAddins
+Checked in changes
 
 ## Interesting aspects
+
+It's easy to start!
