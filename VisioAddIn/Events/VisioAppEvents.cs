@@ -927,111 +927,14 @@ namespace VisioAddIn.Events
                 // Skip(1) skips past <Action> and passes any <args> that are present (separated by commas)
                 switch (actionArgs[0])
                 {
-                    #region AZDOActions
-
-                    //case "GetWorkItemInfo":
-                    //    Actions.AZDOActions.GetWorkItemInfo1(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetWorkItemInfo2":
-                    //    Actions.AZDOActions.GetWorkItemInfo2(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetWorkItemRevisions":
-                    //    Actions.AZDOActions.GetWorkItemRevisions(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "AddLinkedWorkItems":
-                    //    Actions.AZDOActions.AddLinkedWorkItems1(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "AddLinkedWorkItems2":
-                    //    Actions.AZDOActions.AddLinkedWorkItems2(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "AddLinkedWorkItemsExternal":
-                    //    Actions.AZDOActions.AddLinkedWorkItemsExternal(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "QueryWorkItems":
-                    //    Actions.AZDOActions.QueryWorkItems(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    #endregion
-
-                    #region RoslynActions
-
-                    //case "CreateMethodShapes":
-                    //    Actions.RoslynActions.CreateMethodShapes(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetClassInfo":
-                    //    Actions.RoslynActions.GetClassInfo(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetProjectFileInfo":
-                    //    Actions.RoslynActions.GetProjectFileInfo(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetSolutionFileInfo":
-                    //    Actions.RoslynActions.GetSolutionFileInfo(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "GetSourceFileInfo":
-                    //    Actions.RoslynActions.GetSourceFileInfo(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-
-                    #endregion
-
                     #region Visio_Document Actions
-
-                    //case "CreatePluralSightCourseFileFromShape":
-                    //    Actions.Visio_Document.CreatePluralSightCourseFileFromShape(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
 
                     #endregion
 
                     #region Visio_Page Actions
 
-                    //case "CreateActivityPage":
-                    //    Actions.Visio_Page.CreateActivityPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateArtifactPage":
-                    //    Actions.Visio_Page.CreateArtifactPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateDefaultLayersPage":
-                    //    Actions.Visio_Page.CreateDefaultLayersPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateMetricPage":
-                    //    Actions.Visio_Page.CreateMetricPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateNavigationLinksPage":
-                    //    Actions.Visio_Page.CreateNavigationLinksPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreatePageBasePage":
-                    //    Actions.Visio_Page.CreatePageBasePage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //// CreatePageForShape and LinkShapeToPage may be all we need unless special processing is needed.  
-                    //// Args can handle the common case of PreFix and Delimiter .e.g. L0-XYZ   Where L0 is Prefix and - is delimiter.
-                    //// Consider eliminating Create{ActivityPage,ArtifactPage,MetricPage,RolePage,ToolPage}
-
                     //case "CreatePageForShape":
                     //    Actions.Visio_Page.CreatePageForShape(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateRolePage":
-                    //    Actions.Visio_Page.CreateRolePage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "CreateToolPage":
-                    //    Actions.Visio_Page.CreateToolPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
                     //    break;
 
                     //case "ToggleLayerLock":
@@ -1046,18 +949,6 @@ namespace VisioAddIn.Events
                     //    Actions.Visio_Page.ToggleLayerVisibility(app, doc, page, shape, shapeu);
                     //    break;
 
-                    //case "UpdateGroups":
-                    //    Actions.Visio_Page.UpdateGroupNameShapes(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "UpdateHasColorTags":
-                    //    Actions.Visio_Page.UpdateHasColorTagsShapes(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "UpdateLayer":
-                    //    Actions.Visio_Page.UpdateLayer(app, doc, page, shape, shapeu);
-                    //    break;
-
                     #endregion
 
                     #region Visio_Shape Actions
@@ -1066,16 +957,7 @@ namespace VisioAddIn.Events
                     //    Actions.Visio_Shape.LinkShapeToPage(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
                     //    break;
 
-                    //case "ListInvocationsInMethod":
-                    //    Actions.Visio_Shape.ListInvocationsInMethod(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
-                    //case "ListMethodsInClass":
-                    //    Actions.Visio_Shape.ListMethodsInClass(app, doc, page, shape, shapeu, actionArgs.Skip(1).ToArray());
-                    //    break;
-
                     #endregion
-
                 }
             }
             catch (Exception ex)
