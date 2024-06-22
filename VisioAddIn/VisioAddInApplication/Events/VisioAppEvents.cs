@@ -4,11 +4,8 @@ using System.Linq;
 using System.Text;
 
 using Visio=Microsoft.Office.Interop.Visio;
-//using VisioHelper = VNC.Visio.AddinHelper.Visio;
-using VNC;
-//using SupportTools_Visio.Core;
 
-namespace VisioAddIn.Events
+namespace VisioAddInApplication.Events
 {
     public class VisioAppEvents
     {

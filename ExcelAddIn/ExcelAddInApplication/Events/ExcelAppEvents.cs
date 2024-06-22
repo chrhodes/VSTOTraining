@@ -1,5 +1,5 @@
 ﻿
-namespace ExcelAddIn.Events
+namespace ExcelAddInApplication.Events
 {
     public class ExcelAppEvents
     {

@@ -21,11 +21,11 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9319B4E5-F79C-4FB4-9E10-7D6682B4A705}</ProjectGuid>
+    <ProjectGuid>{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>ExcelAddIn</RootNamespace>
-    <AssemblyName>ExcelAddIn</AssemblyName>
+    <RootNamespace>VisioAddIn</RootNamespace>
+    <AssemblyName>VisioAddIn</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40;UseOfficeInterop</DefineConstants>
     <ResolveComReferenceSilent>true</ResolveComReferenceSilent>
@@ -39,10 +39,10 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>ExcelAddIn</ProductName>
+    <ProductName>VisioAddIn</ProductName>
     <PublisherName />
     <SupportUrl />
-    <FriendlyName>ExcelAddIn</FriendlyName>
+    <FriendlyName>VisioAddIn</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -68,7 +68,7 @@
       OfficeApplication
         Add-in host application
     -->
-    <OfficeApplication>Excel</OfficeApplication>
+    <OfficeApplication>Visio</OfficeApplication>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Debug" configuration is selected.
@@ -147,9 +147,6 @@
     <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -163,7 +160,7 @@
           <Private>False</Private>
           <EmbedInteropTypes>true</EmbedInteropTypes>
         </Reference>
-        <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+        <Reference Include="Microsoft.Office.Interop.Visio, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
           <Private>False</Private>
           <EmbedInteropTypes>true</EmbedInteropTypes>
         </Reference>
@@ -180,10 +177,10 @@
           <Isolated>False</Isolated>
           <EmbedInteropTypes>true</EmbedInteropTypes>
         </COMReference>
-        <COMReference Include="Microsoft.Office.Interop.Excel">
-          <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-          <VersionMajor>1</VersionMajor>
-          <VersionMinor>8</VersionMinor>
+        <COMReference Include="Microsoft.Office.Interop.Visio">
+          <Guid>{00021A98-0000-0000-C000-000000000046}</Guid>
+          <VersionMajor>4</VersionMajor>
+          <VersionMinor>15</VersionMinor>
           <Lcid>0</Lcid>
           <WrapperTool>tlbimp</WrapperTool>
           <Isolated>False</Isolated>
@@ -209,10 +206,18 @@
   -->
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="Events\ExcelAppEvents.cs" />
+    <Compile Include="Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon.Designer.cs">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,10 +227,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Presentation\Ribbon.resx">
-      <DependentUpon>Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="ExcelAddIn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -233,12 +234,6 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Ribbon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Presentation\Ribbon.Designer.cs">
-      <DependentUpon>Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -250,20 +245,25 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="VisioAddIn_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Xaml\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Icons\ExcelAddin.ico" />
+    <Content Include="Resources\Icons\VisioAddin.ico" />
     <Content Include="Resources\Icons\VNCDeveloperMotivation.ico" />
     <Content Include="Resources\Images\DebugWindow.gif" />
     <Content Include="Resources\Images\WatchWindow.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
+    <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
       <Project>{79e6e674-8833-4ab4-8bc5-a62ea1a2c30d}</Project>
       <Name>VNC.VSTOAddIn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisioAddInApplication\VisioAddInApplication.csproj">
+      <Project>{6f0b6e06-75b3-4cd8-8e79-fad4ccd1a31e}</Project>
+      <Name>VisioAddInApplication</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -274,10 +274,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ExcelAddIn_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VisioAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>39DA5C359870D2D382473BF8927CA93C961B12B3</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>77FC4D48ED36B170DE86523829096285FA96704D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -287,9 +287,9 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="Excel" GeneratedCodeNamespace="ExcelAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="42FDE387D0E54421BCB0A1255FFF46EDFA57809A" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        <ProjectProperties HostName="Visio" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Visio" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Visio\InstallRoot\Path#visio.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Visio" GeneratedCodeNamespace="VisioAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="AF392150846705CE498C37E89E2AA7D1841F6B08" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

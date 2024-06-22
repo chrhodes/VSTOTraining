@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Visio">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>16</VersionMinor>
+      <VersionMajor>4</VersionMajor>
+      <Guid>00021a98-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Actions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj" />
+  </ItemGroup>
+
+</Project>

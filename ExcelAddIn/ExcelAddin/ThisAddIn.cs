@@ -1,31 +1,28 @@
-﻿namespace VisioAddIn
+﻿namespace ExcelAddIn
 {
     public partial class ThisAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            //MessageBox.Show("Visio - ThisAddin_Startup");
-
             InitializeRibbonUI();
 
             if (Common.EnableAppEvents)
             {
                 if (Common.AppEvents == null)
                 {
-                    Common.AppEvents = new Events.VisioAppEvents();
-                    Common.AppEvents.VisioApplication = Globals.ThisAddIn.Application;
+                    Common.AppEvents = new ExcelAddInApplication.Events.ExcelAppEvents();
+                    Common.AppEvents.ExcelApplication = Globals.ThisAddIn.Application;
                 }
             }
             else
             {
                 Common.AppEvents = null;
             }
-
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
-            //MessageBox.Show("Visio - ThisAddin_Shutdown");
+            //MessageBox.Show("Excel - ThisAddin_Shutdown");
         }
 
         void InitializeRibbonUI()

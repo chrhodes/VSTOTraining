@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddIn", "ExcelAddIn\ExcelAddIn.csproj", "{9319B4E5-F79C-4FB4-9E10-7D6682B4A705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddIn", "ExcelAddIn\ExcelAddIn\ExcelAddIn.csproj", "{9319B4E5-F79C-4FB4-9E10-7D6682B4A705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddIn", "VisioAddIn\VisioAddIn.csproj", "{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddIn", "VisioAddIn\VisioAddIn\VisioAddIn.csproj", "{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNC.VSTOAddIn", "..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj", "{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddInApplication", "ExcelAddIn\ExcelAddInApplication\ExcelAddInApplication.csproj", "{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddInApplication", "VisioAddIn\VisioAddInApplication\VisioAddInApplication.csproj", "{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
