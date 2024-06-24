@@ -21,6 +21,13 @@
                 Common.AppEvents = null;
             }
 
+            // NOTE(crhodes)
+            // These are the events that the AddIn depends on
+
+            Common.AddInApplicationEvents = new VisioAddInApplication.Events.AddInApplicationEvents();
+            Common.AddInApplicationEvents.VisioApplication = Globals.ThisAddIn.Application;
+            
+            Common.VisioApplication = Globals.ThisAddIn.Application;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)

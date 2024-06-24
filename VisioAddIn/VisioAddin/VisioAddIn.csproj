@@ -251,10 +251,18 @@
     <Folder Include="Resources\Xaml\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Icons\VisioAddin.ico" />
-    <Content Include="Resources\Icons\VNCDeveloperMotivation.ico" />
-    <Content Include="Resources\Images\DebugWindow.gif" />
-    <Content Include="Resources\Images\WatchWindow.gif" />
+    <Content Include="Resources\Icons\VisioAddin.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\VNCDeveloperMotivation.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\DebugWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\WatchWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
