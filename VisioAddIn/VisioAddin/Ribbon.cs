@@ -64,6 +64,20 @@ namespace VisioAddIn
         private void rcbEnableAppEvents_Click(object sender, RibbonControlEventArgs e)
         {
             Common.EnableAppEvents = rcbEnableAppEvents.Checked;
+
+            if (Common.EnableAppEvents)
+            {
+                if (Common.AppEvents == null)
+                {
+                    Common.AppEvents = new VisioAddInApplication.Events.VisioAppEvents();
+                    Common.AppEvents.VisioApplication = Globals.ThisAddIn.Application;
+                }
+            }
+            else
+            {
+                Common.AppEvents.VisioApplication = null;
+                Common.AppEvents = null;
+            }
         }
 
         private void rcbDisplayEvents_Click(object sender, RibbonControlEventArgs e)

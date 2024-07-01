@@ -260,10 +260,6 @@
     <Content Include="Resources\Images\WatchWindow.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
-      <Project>{79e6e674-8833-4ab4-8bc5-a62ea1a2c30d}</Project>
-      <Name>VNC.VSTOAddIn</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ExcelAddInApplication\ExcelAddInApplication.csproj">
       <Project>{5b167c17-baeb-44fc-94de-5e311b92c4b0}</Project>
       <Name>ExcelAddInApplication</Name>

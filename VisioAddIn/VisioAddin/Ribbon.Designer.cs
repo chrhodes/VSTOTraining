@@ -44,18 +44,19 @@
             this.rgDebug = this.Factory.CreateRibbonGroup();
             this.btnDebugWindow = this.Factory.CreateRibbonButton();
             this.btnWatchWindow = this.Factory.CreateRibbonButton();
-            this.rcbLogToDebugWindow = this.Factory.CreateRibbonCheckBox();
             this.rcbEnableAppEvents = this.Factory.CreateRibbonCheckBox();
             this.rcbDisplayEvents = this.Factory.CreateRibbonCheckBox();
             this.rcbDisplayChattyEvents = this.Factory.CreateRibbonCheckBox();
             this.rgHelp = this.Factory.CreateRibbonGroup();
             this.btnDisplayAddInInfo = this.Factory.CreateRibbonButton();
             this.btnToggleDeveloperMode = this.Factory.CreateRibbonButton();
+            this.box1 = this.Factory.CreateRibbonBox();
             this.tab1.SuspendLayout();
             this.tabMyCoolTab.SuspendLayout();
             this.group2.SuspendLayout();
             this.rgDebug.SuspendLayout();
             this.rgHelp.SuspendLayout();
+            this.box1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -101,10 +102,7 @@
             // 
             this.rgDebug.Items.Add(this.btnDebugWindow);
             this.rgDebug.Items.Add(this.btnWatchWindow);
-            this.rgDebug.Items.Add(this.rcbLogToDebugWindow);
-            this.rgDebug.Items.Add(this.rcbEnableAppEvents);
-            this.rgDebug.Items.Add(this.rcbDisplayEvents);
-            this.rgDebug.Items.Add(this.rcbDisplayChattyEvents);
+            this.rgDebug.Items.Add(this.box1);
             this.rgDebug.Label = "Debug";
             this.rgDebug.Name = "rgDebug";
             // 
@@ -123,12 +121,6 @@
             this.btnWatchWindow.Name = "btnWatchWindow";
             this.btnWatchWindow.ShowImage = true;
             this.btnWatchWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWatchWindow_Click);
-            // 
-            // rcbLogToDebugWindow
-            // 
-            this.rcbLogToDebugWindow.Label = "Log to Debug Window";
-            this.rcbLogToDebugWindow.Name = "rcbLogToDebugWindow";
-            this.rcbLogToDebugWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbLogToDebugWindow_Click);
             // 
             // rcbEnableAppEvents
             // 
@@ -167,6 +159,13 @@
             this.btnToggleDeveloperMode.Name = "btnToggleDeveloperMode";
             this.btnToggleDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperMode_Click);
             // 
+            // box1
+            // 
+            this.box1.Items.Add(this.rcbEnableAppEvents);
+            this.box1.Items.Add(this.rcbDisplayChattyEvents);
+            this.box1.Items.Add(this.rcbDisplayEvents);
+            this.box1.Name = "box1";
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -184,6 +183,8 @@
             this.rgDebug.PerformLayout();
             this.rgHelp.ResumeLayout(false);
             this.rgHelp.PerformLayout();
+            this.box1.ResumeLayout(false);
+            this.box1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,13 +200,13 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgDebug;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDebugWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnWatchWindow;
-        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbLogToDebugWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbEnableAppEvents;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbDisplayEvents;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox rcbDisplayChattyEvents;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDisplayAddInInfo;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnToggleDeveloperMode;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box1;
     }
 
     partial class ThisRibbonCollection

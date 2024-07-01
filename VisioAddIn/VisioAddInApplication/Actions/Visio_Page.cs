@@ -20,8 +20,11 @@ namespace VisioAddInApplication.Actions
         {
             Common.WriteToDebugWindow($"{MethodInfo.GetCurrentMethod().Name} Name:>{page.Name}< NameU:>{page.NameU}<");
 
-            SyncPageNames(Common.VisioApplication, page);
-            UpdatePageNameShapes(page);
+            if (page.NameU != page.Name)
+            {
+                SyncPageNames(Common.VisioApplication, page);
+                UpdatePageNameShapes(page);
+            }
         }
 
         #endregion
@@ -129,7 +132,10 @@ namespace VisioAddInApplication.Actions
                 // Or add a property to Shape.
 
                 VNCVisioAddIn.Helpers.LoadStencil(app, "Page Shapes.vssx");
-                Master headerMaster = app.Documents[@"Page Shapes.vssx"].Masters[@"18pt Header"];
+                Master headerMaster = app.Documents[@"Page Shapes.vssx"].Masters[@"Sizeable Page Header"];
+
+                // NOTE(crhodes)
+                // Doesn't really matter where header is dropped as Sizeable Page Header will position itself.
 
                 newPage.Drop(headerMaster, 5.5, 8.0625);
 
@@ -250,7 +256,8 @@ namespace VisioAddInApplication.Actions
 
             int currentPageIndex = app.ActivePage.Index;
 
-            Common.WriteToDebugWindow($"   currentPageIndex:{currentPageIndex}");
+            Common.WriteToDebugWindow($"  currentPageIndex:{currentPageIndex}");
+
             Page newPage = app.ActiveDocument.Pages.Add();
 
             // Cleanup page names
@@ -325,6 +332,7 @@ namespace VisioAddInApplication.Actions
             }
             catch (Exception ex)
             {
+                Common.WriteToDebugWindow(ex.ToString());
                 //Log.Error(ex, Common.LOG_CATEGORY);
                 // No navigation Links Page perhaps
             }
@@ -350,7 +358,8 @@ namespace VisioAddInApplication.Actions
             }
             catch (Exception ex)
             {
-                Log.Error(ex, Common.LOG_CATEGORY);
+                Common.WriteToDebugWindow(ex.ToString());
+                //Log.Error(ex, Common.LOG_CATEGORY);
             }
         }
 
@@ -370,11 +379,9 @@ namespace VisioAddInApplication.Actions
             return navigationLinks;
         }
 
-
         private static void SyncPageNames(Application app)
         {
-            Common.WriteToDebugWindow(string.Format("{0}()",
-                System.Reflection.MethodInfo.GetCurrentMethod().Name));
+            Common.WriteToDebugWindow($"{MethodInfo.GetCurrentMethod().Name}()");
 
             Document doc = app.ActiveDocument;
             Page page = app.ActivePage;
@@ -386,14 +393,20 @@ namespace VisioAddInApplication.Actions
         {
             Common.WriteToDebugWindow($"{MethodInfo.GetCurrentMethod().Name} Name:>{page.Name}< NameU:>{page.NameU}<");
 
+            // NOTE(crhodes)
+            // NameU is universal name and Name is localized name
+            // NameU can only be changed in code.
+
             try
             {
                 app.EventsEnabled = 0;
+
                 page.NameU = page.Name;
             }
             catch (Exception ex)
             {
-                Log.Error(ex, Common.LOG_CATEGORY);
+                Common.WriteToDebugWindow(ex.ToString());
+                //Log.Error(ex, Common.LOG_CATEGORY);
             }
             finally
             {
@@ -407,7 +420,7 @@ namespace VisioAddInApplication.Actions
 
             foreach (Shape shape in page.Shapes)
             {
-                Actions.Visio_Shape.UpdatePageNameShape(shape, page.Name);
+                Visio_Shape.UpdatePageNameShape(shape, page.Name);
             }
         }
 

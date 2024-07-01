@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 
 using Microsoft.Office.Interop.Visio;
@@ -27,809 +26,747 @@ namespace VisioAddInApplication.Events
 
                 if (_VisioApplication != null)
                 {
-                    _VisioApplication.AfterModal += new EApplication_AfterModalEventHandler(_VisioApplication_AfterModal);
-                    _VisioApplication.AfterRemoveHiddenInformation += new EApplication_AfterRemoveHiddenInformationEventHandler(_VisioApplication_AfterRemoveHiddenInformation);
-                    _VisioApplication.AfterResume += new EApplication_AfterResumeEventHandler(_VisioApplication_AfterResume);
-                    _VisioApplication.AfterResumeEvents += new EApplication_AfterResumeEventsEventHandler(_VisioApplication_AfterResumeEvents);
-                    _VisioApplication.AppActivated += new EApplication_AppActivatedEventHandler(_VisioApplication_AppActivated);
-                    _VisioApplication.AppDeactivated += new EApplication_AppDeactivatedEventHandler(_VisioApplication_AppDeactivated);
-                    _VisioApplication.AppObjActivated += new EApplication_AppObjActivatedEventHandler(_VisioApplication_AppObjActivated);
-                    _VisioApplication.AppObjDeactivated += new EApplication_AppObjDeactivatedEventHandler(_VisioApplication_AppObjDeactivated);
-                    _VisioApplication.BeforeDataRecordsetDelete += new EApplication_BeforeDataRecordsetDeleteEventHandler(_VisioApplication_BeforeDataRecordsetDelete);
-                    _VisioApplication.BeforeDocumentClose += new EApplication_BeforeDocumentCloseEventHandler(_VisioApplication_BeforeDocumentClose);
-                    _VisioApplication.BeforeDocumentSave += new EApplication_BeforeDocumentSaveEventHandler(_VisioApplication_BeforeDocumentSave);
-                    _VisioApplication.BeforeDocumentSaveAs += new EApplication_BeforeDocumentSaveAsEventHandler(_VisioApplication_BeforeDocumentSaveAs);
-                    _VisioApplication.BeforeMasterDelete += new EApplication_BeforeMasterDeleteEventHandler(_VisioApplication_BeforeMasterDelete);
-                    _VisioApplication.BeforeModal += new EApplication_BeforeModalEventHandler(_VisioApplication_BeforeModal);
-                    _VisioApplication.BeforePageDelete += new EApplication_BeforePageDeleteEventHandler(_VisioApplication_BeforePageDelete);
-                    _VisioApplication.BeforeQuit += new EApplication_BeforeQuitEventHandler(_VisioApplication_BeforeQuit);
-                    _VisioApplication.BeforeSelectionDelete += new EApplication_BeforeSelectionDeleteEventHandler(_VisioApplication_BeforeSelectionDelete);
-                    _VisioApplication.BeforeShapeDelete += new EApplication_BeforeShapeDeleteEventHandler(_VisioApplication_BeforeShapeDelete);
-                    _VisioApplication.BeforeShapeTextEdit += new EApplication_BeforeShapeTextEditEventHandler(_VisioApplication_BeforeShapeTextEdit);
-                    _VisioApplication.BeforeStyleDelete += new EApplication_BeforeStyleDeleteEventHandler(_VisioApplication_BeforeStyleDelete);
-                    _VisioApplication.BeforeSuspend += new EApplication_BeforeSuspendEventHandler(_VisioApplication_BeforeSuspend);
-                    _VisioApplication.BeforeSuspendEvents += new EApplication_BeforeSuspendEventsEventHandler(_VisioApplication_BeforeSuspendEvents);
-                    _VisioApplication.BeforeWindowClosed += new EApplication_BeforeWindowClosedEventHandler(_VisioApplication_BeforeWindowClosed);
-                    _VisioApplication.BeforeWindowPageTurn += new EApplication_BeforeWindowPageTurnEventHandler(_VisioApplication_BeforeWindowPageTurn);
-                    _VisioApplication.BeforeWindowSelDelete += new EApplication_BeforeWindowSelDeleteEventHandler(_VisioApplication_BeforeWindowSelDelete);
-                    _VisioApplication.CalloutRelationshipAdded += new EApplication_CalloutRelationshipAddedEventHandler(_VisioApplication_CalloutRelationshipAdded);
-                    _VisioApplication.CalloutRelationshipDeleted += new EApplication_CalloutRelationshipDeletedEventHandler(_VisioApplication_CalloutRelationshipDeleted);
-                    _VisioApplication.CellChanged += new EApplication_CellChangedEventHandler(_VisioApplication_CellChanged);
-                    _VisioApplication.ConnectionsAdded += new EApplication_ConnectionsAddedEventHandler(_VisioApplication_ConnectionsAdded);
-                    _VisioApplication.ConnectionsDeleted += new EApplication_ConnectionsDeletedEventHandler(_VisioApplication_ConnectionsDeleted);
-                    _VisioApplication.ContainerRelationshipAdded += new EApplication_ContainerRelationshipAddedEventHandler(_VisioApplication_ContainerRelationshipAdded);
-                    _VisioApplication.ContainerRelationshipDeleted += new EApplication_ContainerRelationshipDeletedEventHandler(_VisioApplication_ContainerRelationshipDeleted);
-                    _VisioApplication.ConvertToGroupCanceled += new EApplication_ConvertToGroupCanceledEventHandler(_VisioApplication_ConvertToGroupCanceled);
-                    _VisioApplication.DataRecordsetAdded += new EApplication_DataRecordsetAddedEventHandler(_VisioApplication_DataRecordsetAdded);
-                    _VisioApplication.DataRecordsetChanged += new EApplication_DataRecordsetChangedEventHandler(_VisioApplication_DataRecordsetChanged);
-                    _VisioApplication.DesignModeEntered += new EApplication_DesignModeEnteredEventHandler(_VisioApplication_DesignModeEntered);
-                    _VisioApplication.DocumentChanged += new EApplication_DocumentChangedEventHandler(_VisioApplication_DocumentChanged);
-                    _VisioApplication.DocumentCloseCanceled += new EApplication_DocumentCloseCanceledEventHandler(_VisioApplication_DocumentCloseCanceled);
-                    _VisioApplication.DocumentCreated += new EApplication_DocumentCreatedEventHandler(_VisioApplication_DocumentCreated);
-                    _VisioApplication.DocumentOpened += new EApplication_DocumentOpenedEventHandler(_VisioApplication_DocumentOpened);
-                    _VisioApplication.DocumentSaved += new EApplication_DocumentSavedEventHandler(_VisioApplication_DocumentSaved);
-                    _VisioApplication.DocumentSavedAs += new EApplication_DocumentSavedAsEventHandler(_VisioApplication_DocumentSavedAs);
-                    _VisioApplication.EnterScope += new EApplication_EnterScopeEventHandler(_VisioApplication_EnterScope);
-                    _VisioApplication.ExitScope += new EApplication_ExitScopeEventHandler(_VisioApplication_ExitScope);
-                    _VisioApplication.FormulaChanged += new EApplication_FormulaChangedEventHandler(_VisioApplication_FormulaChanged);
-                    _VisioApplication.GroupCanceled += new EApplication_GroupCanceledEventHandler(_VisioApplication_GroupCanceled);
-                    _VisioApplication.KeyDown += new EApplication_KeyDownEventHandler(_VisioApplication_KeyDown);
-                    _VisioApplication.KeyPress += new EApplication_KeyPressEventHandler(_VisioApplication_KeyPress);
-                    _VisioApplication.KeyUp += new EApplication_KeyUpEventHandler(_VisioApplication_KeyUp);
-                    _VisioApplication.MarkerEvent += new EApplication_MarkerEventEventHandler(_VisioApplication_MarkerEvent);
-                    _VisioApplication.MasterAdded += new EApplication_MasterAddedEventHandler(_VisioApplication_MasterAdded);
-                    _VisioApplication.MasterChanged += new EApplication_MasterChangedEventHandler(_VisioApplication_MasterChanged);
-                    _VisioApplication.MasterDeleteCanceled += new EApplication_MasterDeleteCanceledEventHandler(_VisioApplication_MasterDeleteCanceled);
-                    _VisioApplication.MouseDown += new EApplication_MouseDownEventHandler(_VisioApplication_MouseDown);
-                    _VisioApplication.MouseMove += new EApplication_MouseMoveEventHandler(_VisioApplication_MouseMove);
-                    _VisioApplication.MouseUp += new EApplication_MouseUpEventHandler(_VisioApplication_MouseUp);
-                    _VisioApplication.MustFlushScopeBeginning += new EApplication_MustFlushScopeBeginningEventHandler(_VisioApplication_MustFlushScopeBeginning);
-                    _VisioApplication.MustFlushScopeEnded += new EApplication_MustFlushScopeEndedEventHandler(_VisioApplication_MustFlushScopeEnded);
-                    _VisioApplication.NoEventsPending += new EApplication_NoEventsPendingEventHandler(_VisioApplication_NoEventsPending);
-                    _VisioApplication.OnKeystrokeMessageForAddon += new EApplication_OnKeystrokeMessageForAddonEventHandler(_VisioApplication_OnKeystrokeMessageForAddon);
-                    _VisioApplication.PageAdded += new EApplication_PageAddedEventHandler(_VisioApplication_PageAdded);
-                    _VisioApplication.PageChanged += new EApplication_PageChangedEventHandler(_VisioApplication_PageChanged);
-                    _VisioApplication.PageDeleteCanceled += new EApplication_PageDeleteCanceledEventHandler(_VisioApplication_PageDeleteCanceled);
-                    _VisioApplication.QueryCancelConvertToGroup += new EApplication_QueryCancelConvertToGroupEventHandler(_VisioApplication_QueryCancelConvertToGroup);
-                    _VisioApplication.QueryCancelDocumentClose += new EApplication_QueryCancelDocumentCloseEventHandler(_VisioApplication_QueryCancelDocumentClose);
-                    _VisioApplication.QueryCancelGroup += new EApplication_QueryCancelGroupEventHandler(_VisioApplication_QueryCancelGroup);
-                    _VisioApplication.QueryCancelMasterDelete += new EApplication_QueryCancelMasterDeleteEventHandler(_VisioApplication_QueryCancelMasterDelete);
-                    _VisioApplication.QueryCancelPageDelete += new EApplication_QueryCancelPageDeleteEventHandler(_VisioApplication_QueryCancelPageDelete);
-                    _VisioApplication.QueryCancelQuit += new EApplication_QueryCancelQuitEventHandler(_VisioApplication_QueryCancelQuit);
-                    _VisioApplication.QueryCancelSelectionDelete += new EApplication_QueryCancelSelectionDeleteEventHandler(_VisioApplication_QueryCancelSelectionDelete);
-                    _VisioApplication.QueryCancelStyleDelete += new EApplication_QueryCancelStyleDeleteEventHandler(_VisioApplication_QueryCancelStyleDelete);
-                    _VisioApplication.QueryCancelSuspend += new EApplication_QueryCancelSuspendEventHandler(_VisioApplication_QueryCancelSuspend);
-                    _VisioApplication.QueryCancelSuspendEvents += new EApplication_QueryCancelSuspendEventsEventHandler(_VisioApplication_QueryCancelSuspendEvents);
-                    _VisioApplication.QueryCancelUngroup += new EApplication_QueryCancelUngroupEventHandler(_VisioApplication_QueryCancelUngroup);
-                    _VisioApplication.QueryCancelWindowClose += new EApplication_QueryCancelWindowCloseEventHandler(_VisioApplication_QueryCancelWindowClose);
-                    _VisioApplication.QuitCanceled += new EApplication_QuitCanceledEventHandler(_VisioApplication_QuitCanceled);
-                    _VisioApplication.RuleSetValidated += new EApplication_RuleSetValidatedEventHandler(_VisioApplication_RuleSetValidated);
-                    _VisioApplication.RunModeEntered += new EApplication_RunModeEnteredEventHandler(_VisioApplication_RunModeEntered);
-                    _VisioApplication.SelectionAdded += new EApplication_SelectionAddedEventHandler(_VisioApplication_SelectionAdded);
-                    _VisioApplication.SelectionChanged += new EApplication_SelectionChangedEventHandler(_VisioApplication_SelectionChanged);
-                    _VisioApplication.SelectionDeleteCanceled += new EApplication_SelectionDeleteCanceledEventHandler(_VisioApplication_SelectionDeleteCanceled);
-                    _VisioApplication.ShapeAdded += new EApplication_ShapeAddedEventHandler(_VisioApplication_ShapeAdded);
-                    _VisioApplication.ShapeChanged += new EApplication_ShapeChangedEventHandler(_VisioApplication_ShapeChanged);
-                    _VisioApplication.ShapeDataGraphicChanged += new EApplication_ShapeDataGraphicChangedEventHandler(_VisioApplication_ShapeDataGraphicChanged);
-                    _VisioApplication.ShapeExitedTextEdit += new EApplication_ShapeExitedTextEditEventHandler(_VisioApplication_ShapeExitedTextEdit);
-                    _VisioApplication.ShapeLinkAdded += new EApplication_ShapeLinkAddedEventHandler(_VisioApplication_ShapeLinkAdded);
-                    _VisioApplication.ShapeLinkDeleted += new EApplication_ShapeLinkDeletedEventHandler(_VisioApplication_ShapeLinkDeleted);
-                    _VisioApplication.ShapeParentChanged += new EApplication_ShapeParentChangedEventHandler(_VisioApplication_ShapeParentChanged);
-                    _VisioApplication.StyleAdded += new EApplication_StyleAddedEventHandler(_VisioApplication_StyleAdded);
-                    _VisioApplication.StyleChanged += new EApplication_StyleChangedEventHandler(_VisioApplication_StyleChanged);
-                    _VisioApplication.StyleDeleteCanceled += new EApplication_StyleDeleteCanceledEventHandler(_VisioApplication_StyleDeleteCanceled);
-                    _VisioApplication.SuspendCanceled += new EApplication_SuspendCanceledEventHandler(_VisioApplication_SuspendCanceled);
-                    _VisioApplication.SuspendEventsCanceled += new EApplication_SuspendEventsCanceledEventHandler(_VisioApplication_SuspendEventsCanceled);
-                    _VisioApplication.TextChanged += new EApplication_TextChangedEventHandler(_VisioApplication_TextChanged);
-                    _VisioApplication.UngroupCanceled += new EApplication_UngroupCanceledEventHandler(_VisioApplication_UngroupCanceled);
-                    _VisioApplication.ViewChanged += new EApplication_ViewChangedEventHandler(_VisioApplication_ViewChanged);
-                    _VisioApplication.WindowActivated += new EApplication_WindowActivatedEventHandler(_VisioApplication_WindowActivated);
-                    _VisioApplication.WindowChanged += new EApplication_WindowChangedEventHandler(_VisioApplication_WindowChanged);
-                    _VisioApplication.WindowCloseCanceled += new EApplication_WindowCloseCanceledEventHandler(_VisioApplication_WindowCloseCanceled);
-                    _VisioApplication.WindowOpened += new EApplication_WindowOpenedEventHandler(_VisioApplication_WindowOpened);
-                    _VisioApplication.WindowTurnedToPage += new EApplication_WindowTurnedToPageEventHandler(_VisioApplication_WindowTurnedToPage);
+                    _VisioApplication.AfterModal += new EApplication_AfterModalEventHandler(VisioApplication_AfterModal);
+                    _VisioApplication.AfterRemoveHiddenInformation += new EApplication_AfterRemoveHiddenInformationEventHandler(VisioApplication_AfterRemoveHiddenInformation);
+                    _VisioApplication.AfterResume += new EApplication_AfterResumeEventHandler(VisioApplication_AfterResume);
+                    _VisioApplication.AfterResumeEvents += new EApplication_AfterResumeEventsEventHandler(VisioApplication_AfterResumeEvents);
+                    _VisioApplication.AppActivated += new EApplication_AppActivatedEventHandler(VisioApplication_AppActivated);
+                    _VisioApplication.AppDeactivated += new EApplication_AppDeactivatedEventHandler(VisioApplication_AppDeactivated);
+                    _VisioApplication.AppObjActivated += new EApplication_AppObjActivatedEventHandler(VisioApplication_AppObjActivated);
+                    _VisioApplication.AppObjDeactivated += new EApplication_AppObjDeactivatedEventHandler(VisioApplication_AppObjDeactivated);
+                    _VisioApplication.BeforeDataRecordsetDelete += new EApplication_BeforeDataRecordsetDeleteEventHandler(VisioApplication_BeforeDataRecordsetDelete);
+                    _VisioApplication.BeforeDocumentClose += new EApplication_BeforeDocumentCloseEventHandler(VisioApplication_BeforeDocumentClose);
+                    _VisioApplication.BeforeDocumentSave += new EApplication_BeforeDocumentSaveEventHandler(VisioApplication_BeforeDocumentSave);
+                    _VisioApplication.BeforeDocumentSaveAs += new EApplication_BeforeDocumentSaveAsEventHandler(VisioApplication_BeforeDocumentSaveAs);
+                    _VisioApplication.BeforeMasterDelete += new EApplication_BeforeMasterDeleteEventHandler(VisioApplication_BeforeMasterDelete);
+                    _VisioApplication.BeforeModal += new EApplication_BeforeModalEventHandler(VisioApplication_BeforeModal);
+                    _VisioApplication.BeforePageDelete += new EApplication_BeforePageDeleteEventHandler(VisioApplication_BeforePageDelete);
+                    _VisioApplication.BeforeQuit += new EApplication_BeforeQuitEventHandler(VisioApplication_BeforeQuit);
+                    _VisioApplication.BeforeSelectionDelete += new EApplication_BeforeSelectionDeleteEventHandler(VisioApplication_BeforeSelectionDelete);
+                    _VisioApplication.BeforeShapeDelete += new EApplication_BeforeShapeDeleteEventHandler(VisioApplication_BeforeShapeDelete);
+                    _VisioApplication.BeforeShapeTextEdit += new EApplication_BeforeShapeTextEditEventHandler(VisioApplication_BeforeShapeTextEdit);
+                    _VisioApplication.BeforeStyleDelete += new EApplication_BeforeStyleDeleteEventHandler(VisioApplication_BeforeStyleDelete);
+                    _VisioApplication.BeforeSuspend += new EApplication_BeforeSuspendEventHandler(VisioApplication_BeforeSuspend);
+                    _VisioApplication.BeforeSuspendEvents += new EApplication_BeforeSuspendEventsEventHandler(VisioApplication_BeforeSuspendEvents);
+                    _VisioApplication.BeforeWindowClosed += new EApplication_BeforeWindowClosedEventHandler(VisioApplication_BeforeWindowClosed);
+                    _VisioApplication.BeforeWindowPageTurn += new EApplication_BeforeWindowPageTurnEventHandler(VisioApplication_BeforeWindowPageTurn);
+                    _VisioApplication.BeforeWindowSelDelete += new EApplication_BeforeWindowSelDeleteEventHandler(VisioApplication_BeforeWindowSelDelete);
+                    _VisioApplication.CalloutRelationshipAdded += new EApplication_CalloutRelationshipAddedEventHandler(VisioApplication_CalloutRelationshipAdded);
+                    _VisioApplication.CalloutRelationshipDeleted += new EApplication_CalloutRelationshipDeletedEventHandler(VisioApplication_CalloutRelationshipDeleted);
+                    _VisioApplication.CellChanged += new EApplication_CellChangedEventHandler(VisioApplication_CellChanged);
+                    _VisioApplication.ConnectionsAdded += new EApplication_ConnectionsAddedEventHandler(VisioApplication_ConnectionsAdded);
+                    _VisioApplication.ConnectionsDeleted += new EApplication_ConnectionsDeletedEventHandler(VisioApplication_ConnectionsDeleted);
+                    _VisioApplication.ContainerRelationshipAdded += new EApplication_ContainerRelationshipAddedEventHandler(VisioApplication_ContainerRelationshipAdded);
+                    _VisioApplication.ContainerRelationshipDeleted += new EApplication_ContainerRelationshipDeletedEventHandler(VisioApplication_ContainerRelationshipDeleted);
+                    _VisioApplication.ConvertToGroupCanceled += new EApplication_ConvertToGroupCanceledEventHandler(VisioApplication_ConvertToGroupCanceled);
+                    _VisioApplication.DataRecordsetAdded += new EApplication_DataRecordsetAddedEventHandler(VisioApplication_DataRecordsetAdded);
+                    _VisioApplication.DataRecordsetChanged += new EApplication_DataRecordsetChangedEventHandler(VisioApplication_DataRecordsetChanged);
+                    _VisioApplication.DesignModeEntered += new EApplication_DesignModeEnteredEventHandler(VisioApplication_DesignModeEntered);
+                    _VisioApplication.DocumentChanged += new EApplication_DocumentChangedEventHandler(VisioApplication_DocumentChanged);
+                    _VisioApplication.DocumentCloseCanceled += new EApplication_DocumentCloseCanceledEventHandler(VisioApplication_DocumentCloseCanceled);
+                    _VisioApplication.DocumentCreated += new EApplication_DocumentCreatedEventHandler(VisioApplication_DocumentCreated);
+                    _VisioApplication.DocumentOpened += new EApplication_DocumentOpenedEventHandler(VisioApplication_DocumentOpened);
+                    _VisioApplication.DocumentSaved += new EApplication_DocumentSavedEventHandler(VisioApplication_DocumentSaved);
+                    _VisioApplication.DocumentSavedAs += new EApplication_DocumentSavedAsEventHandler(VisioApplication_DocumentSavedAs);
+                    _VisioApplication.EnterScope += new EApplication_EnterScopeEventHandler(VisioApplication_EnterScope);
+                    _VisioApplication.ExitScope += new EApplication_ExitScopeEventHandler(VisioApplication_ExitScope);
+                    _VisioApplication.FormulaChanged += new EApplication_FormulaChangedEventHandler(VisioApplication_FormulaChanged);
+                    _VisioApplication.GroupCanceled += new EApplication_GroupCanceledEventHandler(VisioApplication_GroupCanceled);
+                    _VisioApplication.KeyDown += new EApplication_KeyDownEventHandler(VisioApplication_KeyDown);
+                    _VisioApplication.KeyPress += new EApplication_KeyPressEventHandler(VisioApplication_KeyPress);
+                    _VisioApplication.KeyUp += new EApplication_KeyUpEventHandler(VisioApplication_KeyUp);
+                    _VisioApplication.MarkerEvent += new EApplication_MarkerEventEventHandler(VisioApplication_MarkerEvent);
+                    _VisioApplication.MasterAdded += new EApplication_MasterAddedEventHandler(VisioApplication_MasterAdded);
+                    _VisioApplication.MasterChanged += new EApplication_MasterChangedEventHandler(VisioApplication_MasterChanged);
+                    _VisioApplication.MasterDeleteCanceled += new EApplication_MasterDeleteCanceledEventHandler(VisioApplication_MasterDeleteCanceled);
+                    _VisioApplication.MouseDown += new EApplication_MouseDownEventHandler(VisioApplication_MouseDown);
+                    _VisioApplication.MouseMove += new EApplication_MouseMoveEventHandler(VisioApplication_MouseMove);
+                    _VisioApplication.MouseUp += new EApplication_MouseUpEventHandler(VisioApplication_MouseUp);
+                    _VisioApplication.MustFlushScopeBeginning += new EApplication_MustFlushScopeBeginningEventHandler(VisioApplication_MustFlushScopeBeginning);
+                    _VisioApplication.MustFlushScopeEnded += new EApplication_MustFlushScopeEndedEventHandler(VisioApplication_MustFlushScopeEnded);
+                    _VisioApplication.NoEventsPending += new EApplication_NoEventsPendingEventHandler(VisioApplication_NoEventsPending);
+                    _VisioApplication.OnKeystrokeMessageForAddon += new EApplication_OnKeystrokeMessageForAddonEventHandler(VisioApplication_OnKeystrokeMessageForAddon);
+                    _VisioApplication.PageAdded += new EApplication_PageAddedEventHandler(VisioApplication_PageAdded);
+                    _VisioApplication.PageChanged += new EApplication_PageChangedEventHandler(VisioApplication_PageChanged);
+                    _VisioApplication.PageDeleteCanceled += new EApplication_PageDeleteCanceledEventHandler(VisioApplication_PageDeleteCanceled);
+                    _VisioApplication.QueryCancelConvertToGroup += new EApplication_QueryCancelConvertToGroupEventHandler(VisioApplication_QueryCancelConvertToGroup);
+                    _VisioApplication.QueryCancelDocumentClose += new EApplication_QueryCancelDocumentCloseEventHandler(VisioApplication_QueryCancelDocumentClose);
+                    _VisioApplication.QueryCancelGroup += new EApplication_QueryCancelGroupEventHandler(VisioApplication_QueryCancelGroup);
+                    _VisioApplication.QueryCancelMasterDelete += new EApplication_QueryCancelMasterDeleteEventHandler(VisioApplication_QueryCancelMasterDelete);
+                    _VisioApplication.QueryCancelPageDelete += new EApplication_QueryCancelPageDeleteEventHandler(VisioApplication_QueryCancelPageDelete);
+                    _VisioApplication.QueryCancelQuit += new EApplication_QueryCancelQuitEventHandler(VisioApplication_QueryCancelQuit);
+                    _VisioApplication.QueryCancelSelectionDelete += new EApplication_QueryCancelSelectionDeleteEventHandler(VisioApplication_QueryCancelSelectionDelete);
+                    _VisioApplication.QueryCancelStyleDelete += new EApplication_QueryCancelStyleDeleteEventHandler(VisioApplication_QueryCancelStyleDelete);
+                    _VisioApplication.QueryCancelSuspend += new EApplication_QueryCancelSuspendEventHandler(VisioApplication_QueryCancelSuspend);
+                    _VisioApplication.QueryCancelSuspendEvents += new EApplication_QueryCancelSuspendEventsEventHandler(VisioApplication_QueryCancelSuspendEvents);
+                    _VisioApplication.QueryCancelUngroup += new EApplication_QueryCancelUngroupEventHandler(VisioApplication_QueryCancelUngroup);
+                    _VisioApplication.QueryCancelWindowClose += new EApplication_QueryCancelWindowCloseEventHandler(VisioApplication_QueryCancelWindowClose);
+                    _VisioApplication.QuitCanceled += new EApplication_QuitCanceledEventHandler(VisioApplication_QuitCanceled);
+                    _VisioApplication.RuleSetValidated += new EApplication_RuleSetValidatedEventHandler(VisioApplication_RuleSetValidated);
+                    _VisioApplication.RunModeEntered += new EApplication_RunModeEnteredEventHandler(VisioApplication_RunModeEntered);
+                    _VisioApplication.SelectionAdded += new EApplication_SelectionAddedEventHandler(VisioApplication_SelectionAdded);
+                    _VisioApplication.SelectionChanged += new EApplication_SelectionChangedEventHandler(VisioApplication_SelectionChanged);
+                    _VisioApplication.SelectionDeleteCanceled += new EApplication_SelectionDeleteCanceledEventHandler(VisioApplication_SelectionDeleteCanceled);
+                    _VisioApplication.ShapeAdded += new EApplication_ShapeAddedEventHandler(VisioApplication_ShapeAdded);
+                    _VisioApplication.ShapeChanged += new EApplication_ShapeChangedEventHandler(VisioApplication_ShapeChanged);
+                    _VisioApplication.ShapeDataGraphicChanged += new EApplication_ShapeDataGraphicChangedEventHandler(VisioApplication_ShapeDataGraphicChanged);
+                    _VisioApplication.ShapeExitedTextEdit += new EApplication_ShapeExitedTextEditEventHandler(VisioApplication_ShapeExitedTextEdit);
+                    _VisioApplication.ShapeLinkAdded += new EApplication_ShapeLinkAddedEventHandler(VisioApplication_ShapeLinkAdded);
+                    _VisioApplication.ShapeLinkDeleted += new EApplication_ShapeLinkDeletedEventHandler(VisioApplication_ShapeLinkDeleted);
+                    _VisioApplication.ShapeParentChanged += new EApplication_ShapeParentChangedEventHandler(VisioApplication_ShapeParentChanged);
+                    _VisioApplication.StyleAdded += new EApplication_StyleAddedEventHandler(VisioApplication_StyleAdded);
+                    _VisioApplication.StyleChanged += new EApplication_StyleChangedEventHandler(VisioApplication_StyleChanged);
+                    _VisioApplication.StyleDeleteCanceled += new EApplication_StyleDeleteCanceledEventHandler(VisioApplication_StyleDeleteCanceled);
+                    _VisioApplication.SuspendCanceled += new EApplication_SuspendCanceledEventHandler(VisioApplication_SuspendCanceled);
+                    _VisioApplication.SuspendEventsCanceled += new EApplication_SuspendEventsCanceledEventHandler(VisioApplication_SuspendEventsCanceled);
+                    _VisioApplication.TextChanged += new EApplication_TextChangedEventHandler(VisioApplication_TextChanged);
+                    _VisioApplication.UngroupCanceled += new EApplication_UngroupCanceledEventHandler(VisioApplication_UngroupCanceled);
+                    _VisioApplication.ViewChanged += new EApplication_ViewChangedEventHandler(VisioApplication_ViewChanged);
+                    _VisioApplication.WindowActivated += new EApplication_WindowActivatedEventHandler(VisioApplication_WindowActivated);
+                    _VisioApplication.WindowChanged += new EApplication_WindowChangedEventHandler(VisioApplication_WindowChanged);
+                    _VisioApplication.WindowCloseCanceled += new EApplication_WindowCloseCanceledEventHandler(VisioApplication_WindowCloseCanceled);
+                    _VisioApplication.WindowOpened += new EApplication_WindowOpenedEventHandler(VisioApplication_WindowOpened);
+                    _VisioApplication.WindowTurnedToPage += new EApplication_WindowTurnedToPageEventHandler(VisioApplication_WindowTurnedToPage);
                 }
             }
         }
 
-        #region Regular Events - Just Log
+        #region Regular Events      
 
-        short countWindowTurnedToPage;
-        void _VisioApplication_WindowTurnedToPage(Window Window)
+        short _count_AfterModal;
+        void VisioApplication_AfterModal(Application app)
         {
-            DisplayEventInWatchWindow(countWindowTurnedToPage++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AfterModal++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeAdded;
-        void _VisioApplication_ShapeAdded(Shape Shape)
+        short _count_AfterRemoveHiddenInformation;
+        void VisioApplication_AfterRemoveHiddenInformation(Document Doc)
         {
-            DisplayEventInWatchWindow(countShapeAdded++, MethodInfo.GetCurrentMethod().Name);
-            //Actions.Visio_Shape.HandleShapeAdded(Shape);
+            DisplayEventInWatchWindow(_count_AfterRemoveHiddenInformation++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countPageChanged;
-        void _VisioApplication_PageChanged(Page Page)
+        short _count_AfterResume;
+        void VisioApplication_AfterResume(Application app)
         {
-            DisplayEventInWatchWindow(countPageChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AfterResume++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countMarkerEvent;
-        void _VisioApplication_MarkerEvent(Application app, int SequenceNum, string ContextString)
+        short _count_AfterResumeEvents;
+        void VisioApplication_AfterResumeEvents(Application app)
         {
-            DisplayEventInWatchWindow(countMarkerEvent++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AfterResumeEvents++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countBeforeMasterDelete;
-        void _VisioApplication_BeforeMasterDelete(Master Master)
+        short _count_AppActivated;
+        void VisioApplication_AppActivated(Application app)
         {
-            DisplayEventInWatchWindow(countBeforeMasterDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AppActivated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countMasterDeleteCanceled;
-        void _VisioApplication_MasterDeleteCanceled(Master Master)
+        short _count_AppDeactivated;
+        void VisioApplication_AppDeactivated(Application app)
         {
-            DisplayEventInWatchWindow(countMasterDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AppDeactivated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countMasterChanged;
-        void _VisioApplication_MasterChanged(Master Master)
+        short _count_AppObjActivated;
+        void VisioApplication_AppObjActivated(Application app)
         {
-            DisplayEventInWatchWindow(countMasterChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AppObjActivated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countMasterAdded;
-        void _VisioApplication_MasterAdded(Master Master)
+        short _count_AppObjDeactivated;
+        void VisioApplication_AppObjDeactivated(Application app)
         {
-            DisplayEventInWatchWindow(countMasterAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_AppObjDeactivated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countTextChange;
-        void _VisioApplication_TextChanged(Shape Shape)
+        short _count_BeforeDataRecordsetDelete;
+        void VisioApplication_BeforeDataRecordsetDelete(DataRecordset DataRecordset)
         {
-            DisplayEventInWatchWindow(countTextChange++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeDataRecordsetDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countWindowOpened;
-        void _VisioApplication_WindowOpened(Window Window)
+       short _count_BeforeDocumentClose;
+        void VisioApplication_BeforeDocumentClose(Document Doc)
         {
-            DisplayEventInWatchWindow(countWindowOpened++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeDocumentClose++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countWindowCloseCanceled;
-        void _VisioApplication_WindowCloseCanceled(Window Window)
+        short _count_BeforeDocumentSave;
+        void VisioApplication_BeforeDocumentSave(Document Doc)
         {
-            DisplayEventInWatchWindow(countWindowCloseCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeDocumentSave++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countWindowChanged;
-        void _VisioApplication_WindowChanged(Window Window)
+        short _count_BeforeDocumentSaveAs;
+        void VisioApplication_BeforeDocumentSaveAs(Document Doc)
         {
-            DisplayEventInWatchWindow(countWindowChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeDocumentSaveAs++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countWindowActivated;
-        void _VisioApplication_WindowActivated(Window Window)
+        short _count_BeforeMasterDelete;
+        void VisioApplication_BeforeMasterDelete(Master Master)
         {
-            DisplayEventInWatchWindow(countWindowActivated++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeMasterDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countViewChanged;
-        void _VisioApplication_ViewChanged(Window Window)
+        short _count_BeforeModal;
+        void VisioApplication_BeforeModal(Application app)
         {
-            DisplayEventInWatchWindow(countViewChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeModal++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countUngroupCanceled;
-        void _VisioApplication_UngroupCanceled(Selection Selection)
+        short _count_BeforePageDelete;
+        void VisioApplication_BeforePageDelete(Page Page)
         {
-            DisplayEventInWatchWindow(countUngroupCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforePageDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countSuspendEventsCanceled;
-        void _VisioApplication_SuspendEventsCanceled(Application app)
+        short _count_BeforeQuit;
+        void VisioApplication_BeforeQuit(Application app)
         {
-            DisplayEventInWatchWindow(countSuspendEventsCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeQuit++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countSuspendCanceled;
-        void _VisioApplication_SuspendCanceled(Application app)
+        internal short _count_BeforeSelectionDelete;
+        void VisioApplication_BeforeSelectionDelete(Selection Selection)
         {
-            DisplayEventInWatchWindow(countSuspendCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeSelectionDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countStyleDeleteCanceled;
-        void _VisioApplication_StyleDeleteCanceled(Style Style)
+        short _count_BeforeShapeDelete;
+        void VisioApplication_BeforeShapeDelete(Shape Shape)
         {
-            DisplayEventInWatchWindow(countStyleDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeShapeDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countStyleChanged;
-        void _VisioApplication_StyleChanged(Style Style)
+        short _count_BeforeShapeTextEdit;
+        void VisioApplication_BeforeShapeTextEdit(Shape Shape)
         {
-            DisplayEventInWatchWindow(countStyleChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeShapeTextEdit++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countStyleAdded;
-        void _VisioApplication_StyleAdded(Style Style)
+        short _count_BeforeStyleDelete;
+        void VisioApplication_BeforeStyleDelete(Style Style)
         {
-            DisplayEventInWatchWindow(countStyleAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeStyleDelete++, MethodInfo.GetCurrentMethod().Name);
+        }
+        
+        short _count_BeforeSuspend;
+        void VisioApplication_BeforeSuspend(Application app)
+        {
+            DisplayEventInWatchWindow(_count_BeforeSuspend++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeParentChanged;
-        void _VisioApplication_ShapeParentChanged(Shape Shape)
+        short _count_BeforeSuspendEvents;
+        void VisioApplication_BeforeSuspendEvents(Application app)
         {
-            DisplayEventInWatchWindow(countShapeParentChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeSuspendEvents++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeLinkDeleted;
-        void _VisioApplication_ShapeLinkDeleted(Shape Shape, int DataRecordsetID, int DataRowID)
+        short _count_BeforeWindowClosed;
+        void VisioApplication_BeforeWindowClosed(Window Window)
         {
-            DisplayEventInWatchWindow(countShapeLinkDeleted++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeWindowClosed++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeLinkAdded;
-        void _VisioApplication_ShapeLinkAdded(Shape Shape, int DataRecordsetID, int DataRowID)
+        short _count_BeforeWindowPageTurn;
+        void VisioApplication_BeforeWindowPageTurn(Window Window)
         {
-            DisplayEventInWatchWindow(countShapeLinkAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeWindowPageTurn++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeExitedTextEdit;
-        void _VisioApplication_ShapeExitedTextEdit(Shape Shape)
+        short _count_BeforeWindowSelDelete;
+        void VisioApplication_BeforeWindowSelDelete(Window Window)
         {
-            DisplayEventInWatchWindow(countShapeExitedTextEdit++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_BeforeWindowSelDelete++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeDataGraphicChanged;
-        void _VisioApplication_ShapeDataGraphicChanged(Shape Shape)
+        short _count_CalloutRelationshipAdded;
+        void VisioApplication_CalloutRelationshipAdded(RelatedShapePairEvent ShapePair)
         {
-            DisplayEventInWatchWindow(countShapeDataGraphicChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_CalloutRelationshipAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countShapeChanged;
-        void _VisioApplication_ShapeChanged(Shape Shape)
+        short _count_CalloutRelationshipDeleted;
+        void VisioApplication_CalloutRelationshipDeleted(RelatedShapePairEvent ShapePair)
         {
-            DisplayEventInWatchWindow(countShapeChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_CalloutRelationshipDeleted++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countSelectionDeleteCanceled;
-        void _VisioApplication_SelectionDeleteCanceled(Selection Selection)
+        short _count_ConnectionsAdded;
+        void VisioApplication_ConnectionsAdded(Connects Connects)
         {
-            DisplayEventInWatchWindow(countSelectionDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ConnectionsAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countSelectionChanged;
-        void _VisioApplication_SelectionChanged(Window Window)
+        short _count_ConnectionsDeleted;
+        void VisioApplication_ConnectionsDeleted(Connects Connects)
         {
-            //Common.EventAggregator.GetEvent<SelectionChangedEvent>().Publish();
-            DisplayEventInWatchWindow(countSelectionChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ConnectionsDeleted++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countSelectionAdded;
-        void _VisioApplication_SelectionAdded(Selection Selection)
+        short _count_ContainerRelationshipAdded;
+        void VisioApplication_ContainerRelationshipAdded(RelatedShapePairEvent ShapePair)
         {
-            DisplayEventInWatchWindow(countSelectionAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ContainerRelationshipAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countRunModeEntered;
-        void _VisioApplication_RunModeEntered(Document Doc)
+        short _count_ContainerRelationshipDeleted;
+        void VisioApplication_ContainerRelationshipDeleted(RelatedShapePairEvent ShapePair)
         {
-            DisplayEventInWatchWindow(countRunModeEntered++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ContainerRelationshipDeleted++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countRuleSetValidated;
-        void _VisioApplication_RuleSetValidated(ValidationRuleSet RuleSet)
+        short _count_ConvertToGroupCanceled;
+        void VisioApplication_ConvertToGroupCanceled(Selection Selection)
         {
-            DisplayEventInWatchWindow(countRuleSetValidated++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ConvertToGroupCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countQuitCanceled;
-        void _VisioApplication_QuitCanceled(Application app)
+        short _count_DataRecordsetAdded;
+        void VisioApplication_DataRecordsetAdded(DataRecordset DataRecordset)
         {
-            DisplayEventInWatchWindow(countQuitCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_DataRecordsetAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countQueryCancelWindowClose;
-        bool _VisioApplication_QueryCancelWindowClose(Window Window)
+        short _count_DataRecordsetChanged;
+        void VisioApplication_DataRecordsetChanged(DataRecordsetChangedEvent DataRecordsetChanged)
         {
-            DisplayEventInWatchWindow(countQueryCancelWindowClose++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_DataRecordsetChanged++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DesignModeEntered;
+        void VisioApplication_DesignModeEntered(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DesignModeEntered++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentChanged;
+        void VisioApplication_DocumentChanged(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentChanged++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentCloseCanceled;
+        void VisioApplication_DocumentCloseCanceled(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentCloseCanceled++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentCreated;
+        void VisioApplication_DocumentCreated(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentCreated++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentOpened;
+        void VisioApplication_DocumentOpened(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentOpened++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentSaved;
+        void VisioApplication_DocumentSaved(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentSaved++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_DocumentSavedAs;
+        void VisioApplication_DocumentSavedAs(Document Doc)
+        {
+            DisplayEventInWatchWindow(_count_DocumentSavedAs++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_EnterScope;
+        void VisioApplication_EnterScope(Application app, int nScopeID, string bstrDescription)
+        {
+            DisplayEventInWatchWindow(_count_EnterScope++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_ExitScope;
+        void VisioApplication_ExitScope(Application app, int nScopeID, string bstrDescription, bool bErrOrCancelled)
+        {
+            DisplayEventInWatchWindow(_count_ExitScope++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_GroupCanceled;
+        void VisioApplication_GroupCanceled(Selection Selection)
+        {
+            DisplayEventInWatchWindow(_count_GroupCanceled++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_MarkerEvent;
+        void VisioApplication_MarkerEvent(Application app, int SequenceNum, string ContextString)
+        {
+ 
+            DisplayEventInWatchWindow(_count_MarkerEvent++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_MasterAdded;
+        void VisioApplication_MasterAdded(Master Master)
+        {
+            DisplayEventInWatchWindow(_count_MasterAdded++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_MasterChanged;
+        void VisioApplication_MasterChanged(Master Master)
+        {
+            DisplayEventInWatchWindow(_count_MasterChanged++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_MasterDeleteCanceled;
+        void VisioApplication_MasterDeleteCanceled(Master Master)
+        {
+            DisplayEventInWatchWindow(_count_MasterDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_OnKeystrokeMessageForAddon;
+        bool VisioApplication_OnKeystrokeMessageForAddon(MSGWrap MSG)
+        {
+            DisplayEventInWatchWindow(_count_OnKeystrokeMessageForAddon++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelUngroup;
-        bool _VisioApplication_QueryCancelUngroup(Selection Selection)
+        short _count_PageAdded;
+        void VisioApplication_PageAdded(Page Page)
         {
-            DisplayEventInWatchWindow(countQueryCancelUngroup++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_PageAdded++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_PageChanged;
+        void VisioApplication_PageChanged(Page Page)
+        {
+            DisplayEventInWatchWindow(_count_PageChanged++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_PageDeleteCanceled;
+        void VisioApplication_PageDeleteCanceled(Page Page)
+        {
+            DisplayEventInWatchWindow(_count_PageDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
+        }
+
+        short _count_QueryCancelConvertToGroup;
+        bool VisioApplication_QueryCancelConvertToGroup(Selection Selection)
+        {
+            DisplayEventInWatchWindow(_count_QueryCancelConvertToGroup++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelSuspendEvents;
-        bool _VisioApplication_QueryCancelSuspendEvents(Application app)
+        short _count_QueryCancelDocumentClose;
+        bool VisioApplication_QueryCancelDocumentClose(Document Doc)
         {
-            DisplayEventInWatchWindow(countQueryCancelSuspendEvents++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelDocumentClose++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelSuspend;
-        bool _VisioApplication_QueryCancelSuspend(Application app)
+        short _count_QueryCancelGroup;
+        bool VisioApplication_QueryCancelGroup(Selection Selection)
         {
-            DisplayEventInWatchWindow(countQueryCancelSuspend++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelGroup++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelStyleDelete;
-        bool _VisioApplication_QueryCancelStyleDelete(Style Style)
+        short _count_QueryCancelMasterDelete;
+        bool VisioApplication_QueryCancelMasterDelete(Master Master)
         {
-            DisplayEventInWatchWindow(countQueryCancelStyleDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelMasterDelete++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelSelectionDelete;
-        bool _VisioApplication_QueryCancelSelectionDelete(Selection Selection)
+        short _count_QueryCancelPageDelete;
+        bool VisioApplication_QueryCancelPageDelete(Page Page)
         {
-            DisplayEventInWatchWindow(countQueryCancelSelectionDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelPageDelete++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelQuit;
-        bool _VisioApplication_QueryCancelQuit(Application app)
+        short _count_QueryCancelQuit;
+        bool VisioApplication_QueryCancelQuit(Application app)
         {
-            DisplayEventInWatchWindow(countQueryCancelQuit++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelQuit++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelPageDelete;
-        bool _VisioApplication_QueryCancelPageDelete(Page Page)
+        short _count_QueryCancelSelectionDelete;
+        bool VisioApplication_QueryCancelSelectionDelete(Selection Selection)
         {
-            DisplayEventInWatchWindow(countQueryCancelPageDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelSelectionDelete++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelMasterDelete;
-        bool _VisioApplication_QueryCancelMasterDelete(Master Master)
+        short _count_QueryCancelStyleDelete;
+        bool VisioApplication_QueryCancelStyleDelete(Style Style)
         {
-            DisplayEventInWatchWindow(countQueryCancelMasterDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelStyleDelete++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelGroup;
-        bool _VisioApplication_QueryCancelGroup(Selection Selection)
+        short _count_QueryCancelSuspend;
+        bool VisioApplication_QueryCancelSuspend(Application app)
         {
-            DisplayEventInWatchWindow(countQueryCancelGroup++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelSuspend++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelDocumentClose;
-        bool _VisioApplication_QueryCancelDocumentClose(Document Doc)
+        short _count_QueryCancelSuspendEvents;
+        bool VisioApplication_QueryCancelSuspendEvents(Application app)
         {
-            DisplayEventInWatchWindow(countQueryCancelDocumentClose++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelSuspendEvents++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countQueryCancelConvertToGroup;
-        bool _VisioApplication_QueryCancelConvertToGroup(Selection Selection)
+        short _count_QueryCancelUngroup;
+        bool VisioApplication_QueryCancelUngroup(Selection Selection)
         {
-            DisplayEventInWatchWindow(countQueryCancelConvertToGroup++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelUngroup++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countPageDeleteCanceled;
-        void _VisioApplication_PageDeleteCanceled(Page Page)
+        short _count_QueryCancelWindowClose;
+        bool VisioApplication_QueryCancelWindowClose(Window Window)
         {
-            DisplayEventInWatchWindow(countPageDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countPageAdded;
-        void _VisioApplication_PageAdded(Page Page)
-        {
-            DisplayEventInWatchWindow(countPageAdded++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countOnKeystrokeMessageForAddon;
-        bool _VisioApplication_OnKeystrokeMessageForAddon(MSGWrap MSG)
-        {
-            DisplayEventInWatchWindow(countOnKeystrokeMessageForAddon++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QueryCancelWindowClose++, MethodInfo.GetCurrentMethod().Name);
             return false;
         }
 
-        short countGroupCanceled;
-        void _VisioApplication_GroupCanceled(Selection Selection)
+        short _count_QuitCanceled;
+        void VisioApplication_QuitCanceled(Application app)
         {
-            DisplayEventInWatchWindow(countGroupCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_QuitCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countFormulaChanged;
-        void _VisioApplication_FormulaChanged(Cell Cell)
+        short _count_RuleSetValidated;
+        void VisioApplication_RuleSetValidated(ValidationRuleSet RuleSet)
         {
-            DisplayEventInWatchWindow(countFormulaChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_RuleSetValidated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countExitScope;
-        void _VisioApplication_ExitScope(Application app, int nScopeID, string bstrDescription, bool bErrOrCancelled)
+        short _count_RunModeEntered;
+        void VisioApplication_RunModeEntered(Document Doc)
         {
-            DisplayEventInWatchWindow(countExitScope++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_RunModeEntered++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countEnterScope;
-        void _VisioApplication_EnterScope(Application app, int nScopeID, string bstrDescription)
+        short _count_SelectionAdded;
+        void VisioApplication_SelectionAdded(Selection Selection)
         {
-            DisplayEventInWatchWindow(countEnterScope++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_SelectionAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentSavedAs;
-        void _VisioApplication_DocumentSavedAs(Document Doc)
+        short _count_SelectionChanged;
+        void VisioApplication_SelectionChanged(Window Window)
         {
-            DisplayEventInWatchWindow(countDocumentSavedAs++, MethodInfo.GetCurrentMethod().Name);
+
+            DisplayEventInWatchWindow(_count_SelectionChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentSaved;
-        void _VisioApplication_DocumentSaved(Document Doc)
+        short _count_SelectionDeleteCanceled;
+        void VisioApplication_SelectionDeleteCanceled(Selection Selection)
         {
-            DisplayEventInWatchWindow(countDocumentSaved++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_SelectionDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentOpened;
-        void _VisioApplication_DocumentOpened(Document Doc)
+        short _count_ShapeAdded;
+        void VisioApplication_ShapeAdded(Shape Shape)
         {
-            DisplayEventInWatchWindow(countDocumentOpened++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentCreated;
-        void _VisioApplication_DocumentCreated(Document Doc)
+        short _count_ShapeChanged;
+        void VisioApplication_ShapeChanged(Shape Shape)
         {
-            DisplayEventInWatchWindow(countDocumentCreated++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentCloseCanceled;
-        void _VisioApplication_DocumentCloseCanceled(Document Doc)
+        short _count_ShapeDataGraphicChanged;
+        void VisioApplication_ShapeDataGraphicChanged(Shape Shape)
         {
-            DisplayEventInWatchWindow(countDocumentCloseCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeDataGraphicChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDocumentChanged;
-        void _VisioApplication_DocumentChanged(Document Doc)
+        short _count_ShapeExitedTextEdit;
+        void VisioApplication_ShapeExitedTextEdit(Shape Shape)
         {
-            DisplayEventInWatchWindow(countDocumentChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeExitedTextEdit++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDesignModeEntered;
-        void _VisioApplication_DesignModeEntered(Document Doc)
+        short _count_ShapeLinkAdded;
+        void VisioApplication_ShapeLinkAdded(Shape Shape, int DataRecordsetID, int DataRowID)
         {
-            DisplayEventInWatchWindow(countDesignModeEntered++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeLinkAdded++, MethodInfo.GetCurrentMethod().Name);
+        }
+        short _count_ShapeLinkDeleted;
+        void VisioApplication_ShapeLinkDeleted(Shape Shape, int DataRecordsetID, int DataRowID)
+        {
+            DisplayEventInWatchWindow(_count_ShapeLinkDeleted++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDataRecordsetChanged;
-        void _VisioApplication_DataRecordsetChanged(DataRecordsetChangedEvent DataRecordsetChanged)
+        short _count_ShapeParentChanged;
+        void VisioApplication_ShapeParentChanged(Shape Shape)
         {
-            DisplayEventInWatchWindow(countDataRecordsetChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ShapeParentChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countDataRecordsetAdded;
-        void _VisioApplication_DataRecordsetAdded(DataRecordset DataRecordset)
+        short _count_StyleAdded;
+        void VisioApplication_StyleAdded(Style Style)
         {
-            DisplayEventInWatchWindow(countDataRecordsetAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_StyleAdded++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countConvertToGroupCanceled;
-        void _VisioApplication_ConvertToGroupCanceled(Selection Selection)
+        short _count_StyleChanged;
+        void VisioApplication_StyleChanged(Style Style)
         {
-            DisplayEventInWatchWindow(countConvertToGroupCanceled++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_StyleChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countContainerRelationshipDeleted;
-        void _VisioApplication_ContainerRelationshipDeleted(RelatedShapePairEvent ShapePair)
+        short _count_StyleDeleteCanceled;
+        void VisioApplication_StyleDeleteCanceled(Style Style)
         {
-            DisplayEventInWatchWindow(countContainerRelationshipDeleted++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_StyleDeleteCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countContainerRelationshipAdded;
-        void _VisioApplication_ContainerRelationshipAdded(RelatedShapePairEvent ShapePair)
+        short _count_SuspendCanceled;
+        void VisioApplication_SuspendCanceled(Application app)
         {
-            DisplayEventInWatchWindow(countContainerRelationshipAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_SuspendCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countConnectionsDeleted;
-        void _VisioApplication_ConnectionsDeleted(Connects Connects)
+        short _count_SuspendEventsCanceled;
+        void VisioApplication_SuspendEventsCanceled(Application app)
         {
-            DisplayEventInWatchWindow(countConnectionsDeleted++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_SuspendEventsCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countConnectionsAdded;
-        void _VisioApplication_ConnectionsAdded(Connects Connects)
+        short _count_TextChange;
+        void VisioApplication_TextChanged(Shape Shape)
         {
-            DisplayEventInWatchWindow(countConnectionsAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_TextChange++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countCellChanged;
-        void _VisioApplication_CellChanged(Cell Cell)
+        short _count_UngroupCanceled;
+        void VisioApplication_UngroupCanceled(Selection Selection)
         {
-            DisplayEventInWatchWindow(countCellChanged++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_UngroupCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countCalloutRelationshipDeleted;
-        void _VisioApplication_CalloutRelationshipDeleted(RelatedShapePairEvent ShapePair)
+        short _count_ViewChanged;
+        void VisioApplication_ViewChanged(Window Window)
         {
-            DisplayEventInWatchWindow(countCalloutRelationshipDeleted++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_ViewChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countCalloutRelationshipAdded;
-        void _VisioApplication_CalloutRelationshipAdded(RelatedShapePairEvent ShapePair)
+        short _count_WindowActivated;
+        void VisioApplication_WindowActivated(Window Window)
         {
-            DisplayEventInWatchWindow(countCalloutRelationshipAdded++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_WindowActivated++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countBeforeWindowSelDelete;
-        void _VisioApplication_BeforeWindowSelDelete(Window Window)
+        short _count_WindowChanged;
+        void VisioApplication_WindowChanged(Window Window)
         {
-            DisplayEventInWatchWindow(countBeforeWindowSelDelete++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_WindowChanged++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countBeforeWindowPageTurn;
-        void _VisioApplication_BeforeWindowPageTurn(Window Window)
+        short _count_WindowCloseCanceled;
+        void VisioApplication_WindowCloseCanceled(Window Window)
         {
-            DisplayEventInWatchWindow(countBeforeWindowPageTurn++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_WindowCloseCanceled++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countBeforeWindowClosed;
-        void _VisioApplication_BeforeWindowClosed(Window Window)
+        short _count_WindowOpened;
+        void VisioApplication_WindowOpened(Window Window)
         {
-            DisplayEventInWatchWindow(countBeforeWindowClosed++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_WindowOpened++, MethodInfo.GetCurrentMethod().Name);
         }
 
-        short countBeforeSuspendEvents;
-        void _VisioApplication_BeforeSuspendEvents(Application app)
+        short _count_WindowTurnedToPage;
+        void VisioApplication_WindowTurnedToPage(Window Window)
         {
-            DisplayEventInWatchWindow(countBeforeSuspendEvents++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeSuspend;
-        void _VisioApplication_BeforeSuspend(Application app)
-        {
-            DisplayEventInWatchWindow(countBeforeSuspend++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeStyleDelete;
-        void _VisioApplication_BeforeStyleDelete(Style Style)
-        {
-            DisplayEventInWatchWindow(countBeforeStyleDelete++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeShapeTextEdit;
-        void _VisioApplication_BeforeShapeTextEdit(Shape Shape)
-        {
-            DisplayEventInWatchWindow(countBeforeShapeTextEdit++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeShapeDelete;
-        void _VisioApplication_BeforeShapeDelete(Shape Shape)
-        {
-            DisplayEventInWatchWindow(countBeforeShapeDelete++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeSelectionDelete;
-        void _VisioApplication_BeforeSelectionDelete(Selection Selection)
-        {
-            DisplayEventInWatchWindow(countBeforeSelectionDelete++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeQuit;
-        void _VisioApplication_BeforeQuit(Application app)
-        {
-            DisplayEventInWatchWindow(countBeforeQuit++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforePageDelete;
-        void _VisioApplication_BeforePageDelete(Page Page)
-        {
-            DisplayEventInWatchWindow(countBeforePageDelete++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeModal;
-        void _VisioApplication_BeforeModal(Application app)
-        {
-            DisplayEventInWatchWindow(countBeforeModal++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeDocumentSaveAs;
-        void _VisioApplication_BeforeDocumentSaveAs(Document Doc)
-        {
-            DisplayEventInWatchWindow(countBeforeDocumentSaveAs++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeDocumentSave;
-        void _VisioApplication_BeforeDocumentSave(Document Doc)
-        {
-            DisplayEventInWatchWindow(countBeforeDocumentSave++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeDocumentClose;
-        void _VisioApplication_BeforeDocumentClose(Document Doc)
-        {
-            DisplayEventInWatchWindow(countBeforeDocumentClose++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countBeforeDataRecordsetDelete;
-        void _VisioApplication_BeforeDataRecordsetDelete(DataRecordset DataRecordset)
-        {
-            DisplayEventInWatchWindow(countBeforeDataRecordsetDelete++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAppObjDeactivated;
-        void _VisioApplication_AppObjDeactivated(Application app)
-        {
-            DisplayEventInWatchWindow(countAppObjDeactivated++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAppObjActivated;
-        void _VisioApplication_AppObjActivated(Application app)
-        {
-            DisplayEventInWatchWindow(countAppObjActivated++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAppDeactivated;
-        void _VisioApplication_AppDeactivated(Application app)
-        {
-            DisplayEventInWatchWindow(countAppDeactivated++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAppActivated;
-        void _VisioApplication_AppActivated(Application app)
-        {
-            DisplayEventInWatchWindow(countAppActivated++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAfterResumeEvents;
-        void _VisioApplication_AfterResumeEvents(Application app)
-        {
-            DisplayEventInWatchWindow(countAfterResumeEvents++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAfterResume;
-        void _VisioApplication_AfterResume(Application app)
-        {
-            DisplayEventInWatchWindow(countAfterResume++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAfterRemoveHiddenInformation;
-        void _VisioApplication_AfterRemoveHiddenInformation(Document Doc)
-        {
-            DisplayEventInWatchWindow(countAfterRemoveHiddenInformation++, MethodInfo.GetCurrentMethod().Name);
-        }
-
-        short countAfterModal;
-        void _VisioApplication_AfterModal(Application app)
-        {
-            DisplayEventInWatchWindow(countAfterModal++, MethodInfo.GetCurrentMethod().Name);
+            DisplayEventInWatchWindow(_count_WindowTurnedToPage++, MethodInfo.GetCurrentMethod().Name);
         }
 
         #endregion
 
         #region Chatty Events - Log if DisplayChattyEvents
 
-        short countKeyUp;
-        void _VisioApplication_KeyUp(int KeyCode, int KeyButtonState, ref bool CancelDefault)
+        short _count_CellChanged;
+        void VisioApplication_CellChanged(Cell Cell)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countKeyUp++, MethodInfo.GetCurrentMethod().Name);
-            }
-            else
-            {
-                countKeyUp++;
-            }
+            DisplayEventInWatchWindow(_count_CellChanged++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countKeyPress;
-        void _VisioApplication_KeyPress(int KeyAscii, ref bool CancelDefault)
+        short _count_FormulaChanged;
+        void VisioApplication_FormulaChanged(Cell Cell)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countKeyPress++, MethodInfo.GetCurrentMethod().Name);
-            }
-            else
-            {
-                countKeyPress++;
-            }
+            DisplayEventInWatchWindow(_count_FormulaChanged++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countKeyDown;
-        void _VisioApplication_KeyDown(int KeyCode, int KeyButtonState, ref bool CancelDefault)
+        short _count_KeyDown;
+        void VisioApplication_KeyDown(int KeyCode, int KeyButtonState, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countKeyDown++, MethodInfo.GetCurrentMethod().Name);
-            }
-            else
-            {
-                countKeyDown++;
-            }
-        }
-        short countNoEventsPending;
-        void _VisioApplication_NoEventsPending(Application app)
-        {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countNoEventsPending++, MethodInfo.GetCurrentMethod().Name); ;
-            }
-            else
-            {
-                countNoEventsPending++;
-            }
+            DisplayEventInWatchWindow(_count_KeyDown++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countMustFlushScopeEnded;
-        void _VisioApplication_MustFlushScopeEnded(Application app)
+        short _count_KeyPress;
+        void VisioApplication_KeyPress(int KeyAscii, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countMustFlushScopeEnded++, MethodInfo.GetCurrentMethod().Name);
-            }
-            else
-            {
-                countMustFlushScopeEnded++;
-            }
+            DisplayEventInWatchWindow(_count_KeyPress++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countMustFlushScopeBeginning;
-        void _VisioApplication_MustFlushScopeBeginning(Application app)
+        short _count_KeyUp;
+        void VisioApplication_KeyUp(int KeyCode, int KeyButtonState, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countMustFlushScopeBeginning++, MethodInfo.GetCurrentMethod().Name);
-            }
-            else
-            {
-                countMustFlushScopeBeginning++;
-            }
+            DisplayEventInWatchWindow(_count_KeyUp++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countMouseDown;
-        void _VisioApplication_MouseDown(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
+        short _count_MouseDown;
+        void VisioApplication_MouseDown(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countMouseDown++, MethodInfo.GetCurrentMethod().Name); ;
-            }
-            else
-            {
-                countMouseDown++;
-            }
+            DisplayEventInWatchWindow(_count_MouseDown++, MethodInfo.GetCurrentMethod().Name, true);         
         }
 
-        short countMouseUp;
-        void _VisioApplication_MouseUp(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
+        short _count_MouseMove;
+        void VisioApplication_MouseMove(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countMouseUp++, MethodInfo.GetCurrentMethod().Name); ;
-            }
-            else
-            {
-                countMouseUp++;
-            }
+            DisplayEventInWatchWindow(_count_MouseMove++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        short countMouseMove;
-        void _VisioApplication_MouseMove(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
+        short _count_MouseUp;
+        void VisioApplication_MouseUp(int Button, int KeyButtonState, double x, double y, ref bool CancelDefault)
         {
-            if (Common.DisplayChattyEvents)
-            {
-                DisplayEventInWatchWindow(countMouseMove++, MethodInfo.GetCurrentMethod().Name); ;
-            }
-            else
-            {
-                countMouseMove++;
-            }
+            DisplayEventInWatchWindow(_count_MouseUp++, MethodInfo.GetCurrentMethod().Name, true);
         }
 
-        #endregion Chatty Events
+        short _count_MustFlushScopeBeginning;
+        void VisioApplication_MustFlushScopeBeginning(Application app)
+        {
+            DisplayEventInWatchWindow(_count_MustFlushScopeBeginning++, MethodInfo.GetCurrentMethod().Name, true);
+        }
 
-        private void DisplayEventInWatchWindow(short i, string outputLine)
+        short _count_MustFlushScopeEnded;
+        void VisioApplication_MustFlushScopeEnded(Application app)
+        {
+            DisplayEventInWatchWindow(_count_MustFlushScopeEnded++, MethodInfo.GetCurrentMethod().Name, true);
+        }
+
+        short _count_NoEventsPending;
+        void VisioApplication_NoEventsPending(Application app)
+        {
+            DisplayEventInWatchWindow(_count_NoEventsPending++, MethodInfo.GetCurrentMethod().Name, true); ;
+        }
+
+    #endregion Chatty Events
+
+        internal void DisplayEventInWatchWindow(short i, string outputLine, Boolean isChattyEvent = false)
         {
             if (Common.DisplayEvents)
             {
+                if (isChattyEvent && !Common.DisplayChattyEvents) return;
+
                 Common.WriteToWatchWindow($"{outputLine}:{i}");
             }
         }
-
     }
 }

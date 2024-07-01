@@ -7,15 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddIn", "ExcelAddIn\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddIn", "VisioAddIn\VisioAddIn\VisioAddIn.csproj", "{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNC.VSTOAddIn", "..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj", "{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelAddInApplication", "ExcelAddIn\ExcelAddInApplication\ExcelAddInApplication.csproj", "{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelAddInApplication", "ExcelAddIn\ExcelAddInApplication\ExcelAddInApplication.csproj", "{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddInApplication", "VisioAddIn\VisioAddInApplication\VisioAddInApplication.csproj", "{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNC.Visio.VSTOAddIn", "..\VNCOffice\VNC.Visio.VSTOAddin\VNC.Visio.VSTOAddIn.csproj", "{39E28B3A-81E2-42B5-9F0C-C2B8A3963BE8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNC.Core", "..\VNCDevelopment\VNC.Core\VNC.Core.csproj", "{BE2FF8A4-4891-4402-AF2D-09E3F95A294C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisioAddInApplication", "VisioAddIn\VisioAddInApplication\VisioAddInApplication.csproj", "{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +25,6 @@ Global
 		{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79E6E674-8833-4AB4-8BC5-A62EA1A2C30D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B167C17-BAEB-44FC-94DE-5E311B92C4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,14 +33,6 @@ Global
 		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F0B6E06-75B3-4CD8-8E79-FAD4CCD1A31E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39E28B3A-81E2-42B5-9F0C-C2B8A3963BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39E28B3A-81E2-42B5-9F0C-C2B8A3963BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39E28B3A-81E2-42B5-9F0C-C2B8A3963BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39E28B3A-81E2-42B5-9F0C-C2B8A3963BE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE2FF8A4-4891-4402-AF2D-09E3F95A294C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE2FF8A4-4891-4402-AF2D-09E3F95A294C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE2FF8A4-4891-4402-AF2D-09E3F95A294C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE2FF8A4-4891-4402-AF2D-09E3F95A294C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

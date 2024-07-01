@@ -29,8 +29,4 @@
     <Folder Include="Actions\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj" />
-  </ItemGroup>
-
 </Project>

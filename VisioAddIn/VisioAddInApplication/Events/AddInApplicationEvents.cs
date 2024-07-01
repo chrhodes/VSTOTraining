@@ -26,49 +26,32 @@ namespace VisioAddInApplication.Events
 
                 // NOTE(crhodes)
                 // There are events that are processed by the Application.
+                // Remove the event handler from AppEvents
+                // Can still call method for logging, see infra.
+
                 if (Application != null)
                 {   
                     Application.MarkerEvent += new EApplication_MarkerEventEventHandler(Application_MarkerEvent);
             
                     Application.PageChanged += new EApplication_PageChangedEventHandler(Application_PageChanged);
-       
+
                     Application.ShapeAdded += new EApplication_ShapeAddedEventHandler(Application_ShapeAdded);
-     
+
                     Application.WindowTurnedToPage += new EApplication_WindowTurnedToPageEventHandler(Application_WindowTurnedToPage);
                 }
             }
         }
 
-        #region Events that Do Something and Log
+        #region Events Handled by Application Code
 
-        short countWindowTurnedToPage;
-        void Application_WindowTurnedToPage(Window Window)
-        {
-            DisplayEventInWatchWindow(countWindowTurnedToPage++, MethodInfo.GetCurrentMethod().Name);
-            Window.ViewFit = (int)VisWindowFit.visFitPage;
-        }
+        // NOTE(crhodes)
+        // The VisioAppEvent handlers will log event to watch window.
 
-        short countShapeAdded;
-        void Application_ShapeAdded(Shape Shape)
-        {
-            DisplayEventInWatchWindow(countShapeAdded++, MethodInfo.GetCurrentMethod().Name);
-            //Actions.Visio_Shape.HandleShapeAdded(Shape);
-        }
-
-        short countPageChanged;
-        void Application_PageChanged(Page Page)
-        {
-            DisplayEventInWatchWindow(countPageChanged++, MethodInfo.GetCurrentMethod().Name);
-
-            Actions.Visio_Page.PageChanged(Page);
-        }
-
-        short countMarkerEvent;
         void Application_MarkerEvent(Application app, int SequenceNum, string ContextString)
         {
             string message = $"{MethodInfo.GetCurrentMethod().Name} SequenceNum={SequenceNum} ContextString=>{ContextString}<";
 
-            DisplayEventInWatchWindow(countMarkerEvent++, message);
+            Common.WriteToWatchWindow(message);
 
             // If we got here from a RUNADDONWARGS("QueueMarkerEvent", "<Action>")
             // the ContextString should have multiple pieces showing the context of what was selected.
@@ -97,15 +80,22 @@ namespace VisioAddInApplication.Events
             }
         }
 
-        #endregion
-
-        private void DisplayEventInWatchWindow(short i, string outputLine)
+        void Application_PageChanged(Page Page)
         {
-            if (Common.DisplayEvents)
-            {
-                Common.WriteToWatchWindow($"{outputLine}:{i}");
-            }
+            Actions.Visio_Page.PageChanged(Page);
         }
+
+        void Application_ShapeAdded(Shape Shape)
+        {
+            Actions.Visio_Shape.HandleShapeAdded(Shape);
+        }
+
+        void Application_WindowTurnedToPage(Window Window)
+        {
+            Window.ViewFit = (int)VisWindowFit.visFitPage;
+        }
+
+        #endregion
 
         private void RouteShapeSheet_QueueMarkerEvent(Application app, int sequenceNum, string[] context)
         {

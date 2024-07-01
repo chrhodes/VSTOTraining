@@ -39,9 +39,7 @@
         {
             Globals.Ribbons.Ribbon.rgDebug.Visible = Common.DeveloperMode = false;
 
-            // NOTE(crhodes)
-            // Needed for several events handled by this Addin
-            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = true;
+            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = false;
 
             // NOTE(crhodes)
             // No need to display during normal operation.

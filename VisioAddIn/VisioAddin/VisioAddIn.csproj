@@ -235,6 +235,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Ribbon_VisioAddIn.cs" />
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -265,14 +266,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj">
-      <Project>{79e6e674-8833-4ab4-8bc5-a62ea1a2c30d}</Project>
-      <Name>VNC.VSTOAddIn</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VisioAddInApplication\VisioAddInApplication.csproj">
       <Project>{6f0b6e06-75b3-4cd8-8e79-fad4ccd1a31e}</Project>
       <Name>VisioAddInApplication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="VNC.VSTOAddIn">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
