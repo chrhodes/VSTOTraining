@@ -44,19 +44,19 @@
             this.rgDebug = this.Factory.CreateRibbonGroup();
             this.btnDebugWindow = this.Factory.CreateRibbonButton();
             this.btnWatchWindow = this.Factory.CreateRibbonButton();
+            this.box1 = this.Factory.CreateRibbonBox();
             this.rcbEnableAppEvents = this.Factory.CreateRibbonCheckBox();
-            this.rcbDisplayEvents = this.Factory.CreateRibbonCheckBox();
             this.rcbDisplayChattyEvents = this.Factory.CreateRibbonCheckBox();
+            this.rcbDisplayEvents = this.Factory.CreateRibbonCheckBox();
             this.rgHelp = this.Factory.CreateRibbonGroup();
             this.btnDisplayAddInInfo = this.Factory.CreateRibbonButton();
             this.btnToggleDeveloperMode = this.Factory.CreateRibbonButton();
-            this.box1 = this.Factory.CreateRibbonBox();
             this.tab1.SuspendLayout();
             this.tabMyCoolTab.SuspendLayout();
             this.group2.SuspendLayout();
             this.rgDebug.SuspendLayout();
-            this.rgHelp.SuspendLayout();
             this.box1.SuspendLayout();
+            this.rgHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -122,23 +122,30 @@
             this.btnWatchWindow.ShowImage = true;
             this.btnWatchWindow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWatchWindow_Click);
             // 
+            // box1
+            // 
+            this.box1.Items.Add(this.rcbEnableAppEvents);
+            this.box1.Items.Add(this.rcbDisplayChattyEvents);
+            this.box1.Items.Add(this.rcbDisplayEvents);
+            this.box1.Name = "box1";
+            // 
             // rcbEnableAppEvents
             // 
             this.rcbEnableAppEvents.Label = "Enable App Events";
             this.rcbEnableAppEvents.Name = "rcbEnableAppEvents";
             this.rcbEnableAppEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbEnableAppEvents_Click);
             // 
-            // rcbDisplayEvents
-            // 
-            this.rcbDisplayEvents.Label = "Display Events";
-            this.rcbDisplayEvents.Name = "rcbDisplayEvents";
-            this.rcbDisplayEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayEvents_Click);
-            // 
             // rcbDisplayChattyEvents
             // 
             this.rcbDisplayChattyEvents.Label = "Display Chatty Events";
             this.rcbDisplayChattyEvents.Name = "rcbDisplayChattyEvents";
             this.rcbDisplayChattyEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayChattyEvents_Click);
+            // 
+            // rcbDisplayEvents
+            // 
+            this.rcbDisplayEvents.Label = "Display Events";
+            this.rcbDisplayEvents.Name = "rcbDisplayEvents";
+            this.rcbDisplayEvents.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDisplayEvents_Click);
             // 
             // rgHelp
             // 
@@ -159,13 +166,6 @@
             this.btnToggleDeveloperMode.Name = "btnToggleDeveloperMode";
             this.btnToggleDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperMode_Click);
             // 
-            // box1
-            // 
-            this.box1.Items.Add(this.rcbEnableAppEvents);
-            this.box1.Items.Add(this.rcbDisplayChattyEvents);
-            this.box1.Items.Add(this.rcbDisplayEvents);
-            this.box1.Name = "box1";
-            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -181,10 +181,10 @@
             this.group2.PerformLayout();
             this.rgDebug.ResumeLayout(false);
             this.rgDebug.PerformLayout();
-            this.rgHelp.ResumeLayout(false);
-            this.rgHelp.PerformLayout();
             this.box1.ResumeLayout(false);
             this.box1.PerformLayout();
+            this.rgHelp.ResumeLayout(false);
+            this.rgHelp.PerformLayout();
             this.ResumeLayout(false);
 
         }
