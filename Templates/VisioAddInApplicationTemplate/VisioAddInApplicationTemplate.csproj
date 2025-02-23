@@ -4,4 +4,55 @@
     <TargetFramework>net481</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Presentation\Forms\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Xaml\" />
+  </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net481|AnyCPU'">
+        <!-- Uncoment next line to switch to ProjectReference(s) -->
+        <DefineConstants>$(DefineConstants);VNCPROJECTREF</DefineConstants>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(DefineConstants.Contains(VNCPROJECTREF))'">
+            <ItemGroup>
+                <ProjectReference Include="..\..\..\VNCOffice\VNC.Visio.VSTOAddin\VNC.Visio.VSTOAddIn.csproj" />
+            </ItemGroup>
+        </When>
+        <When Condition="'!$(DefineConstants.Contains(VNCPROJECTREF))'">
+            <ItemGroup>
+                <PackageReference Include="VNC.Visio.VSTOAddIn" Version="1.0.0" />
+                <!--<PackageReference Include="VNC.VSTOAddIn" Version="1.0.0" />-->
+                <PackageReference Include="VNC.Core" Version="2.1.7" />
+            </ItemGroup>
+        </When>
+    </Choose>
+
+    <ItemGroup>
+      <PackageReference Include="VNC.AssemblyHelper" Version="2.0.0" />
+      <PackageReference Include="VNC.Core" Version="2.1.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="Microsoft.Office.Interop.Visio">
+          <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Visio.dll</HintPath>
+        </Reference>
+        <Reference Include="PresentationCore" />
+        <Reference Include="System.Windows.Forms">
+          <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
+        </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Presentation\frmDebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentation\frmWatchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
