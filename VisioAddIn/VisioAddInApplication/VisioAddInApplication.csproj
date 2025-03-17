@@ -16,7 +16,26 @@
     </COMReference>
   </ItemGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
+  <ItemGroup>
+    <Content Include="Resources\Icons\VisioAddin.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\VNCDeveloperMotivation.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\DebugWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\WatchWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Xaml\" />
+  </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net48|AnyCPU'">
         <!-- Uncoment next line to switch to ProjectReference(s) -->
          <DefineConstants>$(DefineConstants);VNCPROJECTREF</DefineConstants> 
     </PropertyGroup>
@@ -25,7 +44,6 @@
         <When Condition="'$(DefineConstants.Contains(VNCPROJECTREF))'">
             <ItemGroup>
                 <ProjectReference Include="..\..\..\VNCOffice\VNC.Visio.VSTOAddin\VNC.Visio.VSTOAddIn.csproj" />
-                <ProjectReference Include="..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj" />
             </ItemGroup>
         </When>
         <When Condition="'!$(DefineConstants.Contains(VNCPROJECTREF))'">

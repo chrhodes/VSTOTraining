@@ -21,16 +21,14 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33C3C02B-1B2A-4D47-AA10-04965F3E0B08}</ProjectGuid>
+    <ProjectGuid>{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>VisioAddIn</RootNamespace>
-    <AssemblyName>VisioAddIn</AssemblyName>
+    <RootNamespace>MyVisioAddin</RootNamespace>
+    <AssemblyName>MyVisioAddin</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40;UseOfficeInterop</DefineConstants>
     <ResolveComReferenceSilent>true</ResolveComReferenceSilent>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
-    <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
@@ -40,19 +38,15 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>VisioAddIn</ProductName>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <ProductName>MyVisioAddin</ProductName>
     <PublisherName />
     <SupportUrl />
-    <FriendlyName>VisioAddIn</FriendlyName>
+    <FriendlyName>MyVisioAddin</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
@@ -211,7 +205,6 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -223,11 +216,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ribbon_VisioAddIn.resx">
-      <DependentUpon>Ribbon_VisioAddIn.cs</DependentUpon>
+    <EmbeddedResource Include="Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MyVisioAddin_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,9 +228,13 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Ribbon_VisioAddIn.cs" />
+    <Compile Include="Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon.Designer.cs">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -248,48 +245,25 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="VisioAddIn_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Xaml\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Icons\VisioAddin.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Icons\VNCDeveloperMotivation.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Images\DebugWindow.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Images\WatchWindow.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VisioAddInApplication\VisioAddInApplication.csproj">
-      <Project>{6f0b6e06-75b3-4cd8-8e79-fad4ccd1a31e}</Project>
-      <Name>VisioAddInApplication</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="VNC.VSTOAddIn">
-      <Version>1.0.0</Version>
-    </PackageReference>
+    <Content Include="VisioAddin.ico" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
+    <ApplicationIcon>VisioAddin.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VisioAddIn_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>D1869FB746E3341527AE9BEDD29EC3A9604A9DF9</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>77FC4D48ED36B170DE86523829096285FA96704D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>MyVisioAddin_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -300,8 +274,8 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Visio" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Visio" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Visio\InstallRoot\Path#visio.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="Visio" GeneratedCodeNamespace="VisioAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="AF392150846705CE498C37E89E2AA7D1841F6B08" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        <Host Name="Visio" GeneratedCodeNamespace="MyVisioAddin" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

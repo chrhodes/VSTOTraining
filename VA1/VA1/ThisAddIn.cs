@@ -1,4 +1,15 @@
-﻿namespace VisioAddIn
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml.Linq;
+
+using VA1Application;
+
+using Office = Microsoft.Office.Core;
+using Visio = Microsoft.Office.Interop.Visio;
+
+namespace VA1
 {
     public partial class ThisAddIn
     {
@@ -12,7 +23,7 @@
             {
                 if (Common.AppEvents == null)
                 {
-                    Common.AppEvents = new VisioAddInApplication.Events.VisioAppEvents();
+                    Common.AppEvents = new VA1Application.Events.VisioAppEvents();
                     Common.AppEvents.VisioApplication = Globals.ThisAddIn.Application;
                 }
             }
@@ -24,9 +35,9 @@
             // NOTE(crhodes)
             // These are the events that the AddIn depends on
 
-            Common.AddInApplicationEvents = new VisioAddInApplication.Events.AddInApplicationEvents();
+            Common.AddInApplicationEvents = new VA1Application.Events.AddInApplicationEvents();
             Common.AddInApplicationEvents.VisioApplication = Globals.ThisAddIn.Application;
-            
+
             Common.VisioApplication = Globals.ThisAddIn.Application;
         }
 
@@ -37,15 +48,15 @@
 
         void InitializeRibbonUI()
         {
-            Globals.Ribbons.Ribbon_VisioAddInTemplate.rgDebug.Visible = Common.DeveloperMode = false;
+            Globals.Ribbons.Ribbon.rgDebug.Visible = Common.DeveloperMode = false;
 
-            Globals.Ribbons.Ribbon_VisioAddInTemplate.rcbEnableAppEvents.Checked = Common.EnableAppEvents = false;
+            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = false;
 
             // NOTE(crhodes)
             // No need to display during normal operation.
             // More for understanding what Visio is doing during development.
-            Globals.Ribbons.Ribbon_VisioAddInTemplate.rcbDisplayEvents.Checked = Common.DisplayEvents = false;
-            Globals.Ribbons.Ribbon_VisioAddInTemplate.rcbDisplayChattyEvents.Checked = Common.DisplayChattyEvents = false;
+            Globals.Ribbons.Ribbon.rcbDisplayEvents.Checked = Common.DisplayEvents = false;
+            Globals.Ribbons.Ribbon.rcbDisplayChattyEvents.Checked = Common.DisplayChattyEvents = false;
         }
 
         #region VSTO generated code
@@ -59,7 +70,7 @@
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }

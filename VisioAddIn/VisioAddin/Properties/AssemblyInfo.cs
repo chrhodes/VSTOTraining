@@ -11,7 +11,7 @@ using System.Security;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("VNC")]
 [assembly: AssemblyProduct("VisioAddIn")]
-[assembly: AssemblyCopyright("Copyright © VNC 2024")]
+[assembly: AssemblyCopyright("Copyright © VNC 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -65,5 +65,5 @@ using System.Security;
 //  Version   Date          By
 //  1.0.0.0   mm/dd/yyyy    Christopher Rhodes
 //      Initial Version
-[assembly: AssemblyInformationalVersion("2024.07.01A")]
+[assembly: AssemblyInformationalVersion("2025.02.20A")]
 

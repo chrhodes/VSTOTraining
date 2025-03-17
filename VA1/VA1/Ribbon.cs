@@ -2,47 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 using Microsoft.Office.Tools.Ribbon;
 
-namespace VisioAddInTemplate
+namespace VA1
 {
     public partial class Ribbon
     {
-        #region EventHandlers
-
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
 
         }
-
-        private void button1_Click(object sender, RibbonControlEventArgs e)
-        {
-            //MessageBox.Show("button1_Click");
-            AddShapeToNewPage();
-        }
-
-        private void button2_Click(object sender, RibbonControlEventArgs e)
-        {
-            //MessageBox.Show("button1_Click");
-            AddFooter();
-        }
-
-        #region Help Events
-
-        private void btnDisplayAddInInfo_Click(object sender, RibbonControlEventArgs e)
-        {
-            DisplayAddInInfo();
-        }
-
-        private void btnToggleDeveloperMode_Click(object sender, RibbonControlEventArgs e)
-        {
-            VNC.VSTOAddIn.Common.DeveloperMode = !VNC.VSTOAddIn.Common.DeveloperMode;
-            Globals.Ribbons.Ribbon.rgDebug.Visible = VNC.VSTOAddIn.Common.DeveloperMode;
-        }
-
-        #endregion
 
         #region Debug Events
 
@@ -56,11 +26,6 @@ namespace VisioAddInTemplate
             DisplayWatchWindow();
         }
 
-        private void rcbLogToDebugWindow_Click(object sender, RibbonControlEventArgs e)
-        {
-            MessageBox.Show(System.Reflection.MethodInfo.GetCurrentMethod().Name);
-        }
-
         private void rcbEnableAppEvents_Click(object sender, RibbonControlEventArgs e)
         {
             Common.EnableAppEvents = rcbEnableAppEvents.Checked;
@@ -69,7 +34,7 @@ namespace VisioAddInTemplate
             {
                 if (Common.AppEvents == null)
                 {
-                    Common.AppEvents = new VisioAddInApplication.Events.VisioAppEvents();
+                    Common.AppEvents = new VA1Application.Events.VisioAppEvents();
                     Common.AppEvents.VisioApplication = Globals.ThisAddIn.Application;
                 }
             }
@@ -82,7 +47,7 @@ namespace VisioAddInTemplate
 
         private void rcbDisplayEvents_Click(object sender, RibbonControlEventArgs e)
         {
-            VisioAddInApplicationTemplate.Common.DisplayEvents = rcbDisplayEvents.Checked;
+            Common.DisplayEvents = rcbDisplayEvents.Checked;
         }
 
         private void rcbDisplayChattyEvents_Click(object sender, RibbonControlEventArgs e)
@@ -90,24 +55,45 @@ namespace VisioAddInTemplate
             Common.DisplayChattyEvents = rcbDisplayChattyEvents.Checked;
         }
 
-        #endregion
+        private void rcbDeveloperUIMode_Click(object sender, RibbonControlEventArgs e)
+        {
+
+        }
+
+        #endregion  
+
+        #region Help Events
+
+        private void btnAddInInfo_Click(object sender, RibbonControlEventArgs e)
+        {
+            DisplayAddInInfo();
+        }
+
+        private void btnDeveloperMode_Click(object sender, RibbonControlEventArgs e)
+        {
+            Common.DeveloperMode = !Common.DeveloperMode;
+            Globals.Ribbons.Ribbon.rgDebug.Visible = Common.DeveloperMode;
+        }
 
         #endregion
 
         #region Private Methods
+
         private void DisplayAddInInfo()
         {
-            VNC.VSTOAddIn.AddInInfo.DisplayInfo();
+            // TODO(crhodes)
+            // Think through how to fix this and not have to reference VNC.AssemblyHelper or just do it
+            VA1Application.AddInInfo.DisplayInfo();
         }
 
         private void DisplayWatchWindow()
         {
-            VNC.VSTOAddIn.Common.WatchWindow.Visible = !VNC.VSTOAddIn.Common.WatchWindow.Visible;
+            Common.WatchWindow.Visible = !Common.WatchWindow.Visible;
         }
 
         private void DisplayDebugWindow()
         {
-            VNC.VSTOAddIn.Common.DebugWindow.Visible = !VNC.VSTOAddIn.Common.DebugWindow.Visible;
+            Common.DebugWindow.Visible = !Common.DebugWindow.Visible;
         }
 
         #endregion
