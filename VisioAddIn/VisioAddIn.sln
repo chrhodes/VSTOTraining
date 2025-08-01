@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioAddInApplicationTempla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VNC.Core", "..\..\VNCDevelopment\VNC.Core\VNC.Core.csproj", "{59BF245D-571B-45C7-AD31-D5332800721A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVisioAddin", "MyVisioAddin\MyVisioAddin.csproj", "{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{59BF245D-571B-45C7-AD31-D5332800721A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59BF245D-571B-45C7-AD31-D5332800721A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59BF245D-571B-45C7-AD31-D5332800721A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2B5DE4-D880-44DD-AC3F-37C9A7CBCDD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
