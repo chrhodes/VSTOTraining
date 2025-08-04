@@ -1,4 +1,4 @@
-﻿namespace VisioAddInTemplate
+﻿namespace VisioAddIn2
 {
     partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -42,7 +42,7 @@
             this.rgPageActions = this.Factory.CreateRibbonGroup();
             this.rlPageActions = this.Factory.CreateRibbonLabel();
             this.rgLayerActions = this.Factory.CreateRibbonGroup();
-            this.rlLayerActions = this.Factory.CreateRibbonLabel();
+            this.label3 = this.Factory.CreateRibbonLabel();
             this.rgShapeActions = this.Factory.CreateRibbonGroup();
             this.rlShapeActions = this.Factory.CreateRibbonLabel();
             this.rgDebug = this.Factory.CreateRibbonGroup();
@@ -77,7 +77,7 @@
             this.group1.Label = "group1";
             this.group1.Name = "group1";
             // 
-            // rtVisioAddInTemplate
+            // rtVisioAddIn2
             // 
             this.rtVisioAddInTemplate.Groups.Add(this.rgDocumentActions);
             this.rtVisioAddInTemplate.Groups.Add(this.rgPageActions);
@@ -85,8 +85,8 @@
             this.rtVisioAddInTemplate.Groups.Add(this.rgShapeActions);
             this.rtVisioAddInTemplate.Groups.Add(this.rgDebug);
             this.rtVisioAddInTemplate.Groups.Add(this.grpHelp);
-            this.rtVisioAddInTemplate.Label = "VisioAddInTemplate";
-            this.rtVisioAddInTemplate.Name = "rtVisioAddInTemplate";
+            this.rtVisioAddInTemplate.Label = "VisioAddIn2";
+            this.rtVisioAddInTemplate.Name = "rtVisioAddIn2";
             // 
             // rgDocumentActions
             // 
@@ -112,14 +112,14 @@
             // 
             // rgLayerActions
             // 
-            this.rgLayerActions.Items.Add(this.rlLayerActions);
+            this.rgLayerActions.Items.Add(this.label3);
             this.rgLayerActions.Label = "Layer Actions";
             this.rgLayerActions.Name = "rgLayerActions";
             // 
-            // rlLayerActions
+            // label3
             // 
-            this.rlLayerActions.Label = "Layer Actions Go Here";
-            this.rlLayerActions.Name = "rlLayerActions";
+            this.label3.Label = "rlLayerActions";
+            this.label3.Name = "label3";
             // 
             // rgShapeActions
             // 
@@ -129,7 +129,7 @@
             // 
             // rlShapeActions
             // 
-            this.rlShapeActions.Label = "Shape Actions Go Here";
+            this.rlShapeActions.Label = "Shape Actions";
             this.rlShapeActions.Name = "rlShapeActions";
             // 
             // rgDebug
@@ -147,7 +147,7 @@
             // btnDebugWindow
             // 
             this.btnDebugWindow.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.btnDebugWindow.Image = global::VisioAddInTemplate.Properties.Resources.DebugWindow;
+            this.btnDebugWindow.Image = global::VisioAddIn2.Properties.Resources.DebugWindow;
             this.btnDebugWindow.Label = "Debug Window";
             this.btnDebugWindow.Name = "btnDebugWindow";
             this.btnDebugWindow.ShowImage = true;
@@ -156,7 +156,7 @@
             // btnWatchWindow
             // 
             this.btnWatchWindow.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.btnWatchWindow.Image = global::VisioAddInTemplate.Properties.Resources.WatchWindow;
+            this.btnWatchWindow.Image = global::VisioAddIn2.Properties.Resources.WatchWindow;
             this.btnWatchWindow.Label = "Watch Window";
             this.btnWatchWindow.Name = "btnWatchWindow";
             this.btnWatchWindow.ShowImage = true;
@@ -242,7 +242,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel rlDocumentActions;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel rlPageActions;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgLayerActions;
-        internal Microsoft.Office.Tools.Ribbon.RibbonLabel rlLayerActions;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel label3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgShapeActions;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel rlShapeActions;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup rgDebug;

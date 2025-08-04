@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Visio">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>16</VersionMinor>
+      <VersionMajor>4</VersionMajor>
+      <Guid>00021a98-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Icons\VisioAddin.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\VNCDeveloperMotivation.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\DebugWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\WatchWindow.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Xaml\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net481|AnyCPU'">
+        <!-- Uncoment next line to switch to ProjectReference(s) -->
+         <DefineConstants>$(DefineConstants);VNCPROJECTREF</DefineConstants> 
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(DefineConstants.Contains(VNCPROJECTREF))'">
+            <ItemGroup>
+                <ProjectReference Include="..\..\..\..\VNCOffice\VNC.Visio.VSTOAddin\VNC.Visio.VSTOAddIn.csproj" />
+                <ProjectReference Include="..\..\..\..\VNCOffice\VNC.VSTOAddin\VNC.VSTOAddIn.csproj" />
+            </ItemGroup>
+        </When>
+        <When Condition="'!$(DefineConstants.Contains(VNCPROJECTREF))'">
+        </When>
+    </Choose>
+    
+</Project>

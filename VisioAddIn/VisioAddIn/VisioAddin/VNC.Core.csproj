@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0-windows</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <AssemblyName>VNC.Core</AssemblyName>
+        <RootNamespace>VNC.Core</RootNamespace>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>VNC.snk</AssemblyOriginatorKeyFile>
+        <VersionPrefix>3.1.0</VersionPrefix>
+        <VersionSuffix>Development</VersionSuffix>
+        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+        <FileVersion>2025.05.23</FileVersion>
+        <Description>Base class for a variety of needs</Description>        
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>        
+        <PackageVersion>3.1.0</PackageVersion>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageProjectUrl>https://github.com/chrhodes/vncdevelopment</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/chrhodes/vncdevelopment</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <PackageTags></PackageTags>
+        <PackageIcon>VNC.png</PackageIcon>
+        <Authors>Christopher Rhodes</Authors>
+        <Company>VNC</Company>
+        <Copyright>Copyright © VNC 2018-2025</Copyright>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>        
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommonServiceLocator" Version="2.0.7" />
+        <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+        <PackageReference Include="Prism.Core" Version="8.1.97" />
+        <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
+        <PackageReference Include="Unity.Interception" Version="5.11.1" />
+    </ItemGroup>
+   
+    <!--Are these needed-->
+    <ItemGroup>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <!--Are these needed-->
+    <ItemGroup>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\VNC.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>TRACE;LOGGING</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DefineConstants>TRACE;LOGGING</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows|AnyCPU'">
+        <!-- Uncoment next line to switch to ProjectReference(s) -->
+         <!--<DefineConstants>$(DefineConstants);VNCPROJECTREF</DefineConstants>--> 
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(DefineConstants.Contains(VNCPROJECTREF))'">
+            <ItemGroup>
+               <ProjectReference Include="..\VNC.Logging\VNC.Logging\VNC.Logging.csproj" />
+            </ItemGroup>
+        </When>
+        <When Condition="'!$(DefineConstants.Contains(VNCPROJECTREF))'">
+            <ItemGroup>
+                <PackageReference Include="VNC.Logging" Version="3.1.0" />
+            </ItemGroup>
+        </When>
+    </Choose>
+   
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(Configuration)'=='Release'">     
+        <Exec Command="powershell.exe -File &quot;$(ProjectDir)\Execute-PreBuild.ps1&quot; -Verbose $(ProjectFileName)" />
+    </Target>    
+    
+</Project>

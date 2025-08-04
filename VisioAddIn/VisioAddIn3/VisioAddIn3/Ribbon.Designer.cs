@@ -1,4 +1,4 @@
-﻿namespace VisioAddInTemplate
+﻿namespace VisioAddIn3
 {
     partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -85,7 +85,7 @@
             this.rtVisioAddInTemplate.Groups.Add(this.rgShapeActions);
             this.rtVisioAddInTemplate.Groups.Add(this.rgDebug);
             this.rtVisioAddInTemplate.Groups.Add(this.grpHelp);
-            this.rtVisioAddInTemplate.Label = "VisioAddInTemplate";
+            this.rtVisioAddInTemplate.Label = "VisioAddIn3";
             this.rtVisioAddInTemplate.Name = "rtVisioAddInTemplate";
             // 
             // rgDocumentActions
@@ -118,7 +118,7 @@
             // 
             // rlLayerActions
             // 
-            this.rlLayerActions.Label = "Layer Actions Go Here";
+            this.rlLayerActions.Label = " Layer Actions Go Here";
             this.rlLayerActions.Name = "rlLayerActions";
             // 
             // rgShapeActions
@@ -147,7 +147,7 @@
             // btnDebugWindow
             // 
             this.btnDebugWindow.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.btnDebugWindow.Image = global::VisioAddInTemplate.Properties.Resources.DebugWindow;
+            this.btnDebugWindow.Image = global::VisioAddIn3.Properties.Resources.DebugWindow;
             this.btnDebugWindow.Label = "Debug Window";
             this.btnDebugWindow.Name = "btnDebugWindow";
             this.btnDebugWindow.ShowImage = true;
@@ -156,7 +156,7 @@
             // btnWatchWindow
             // 
             this.btnWatchWindow.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.btnWatchWindow.Image = global::VisioAddInTemplate.Properties.Resources.WatchWindow;
+            this.btnWatchWindow.Image = global::VisioAddIn3.Properties.Resources.WatchWindow;
             this.btnWatchWindow.Label = "Watch Window";
             this.btnWatchWindow.Name = "btnWatchWindow";
             this.btnWatchWindow.ShowImage = true;
@@ -184,7 +184,7 @@
             // 
             this.rcbDeveloperUIMode.Label = "DeveloperUIMode";
             this.rcbDeveloperUIMode.Name = "rcbDeveloperUIMode";
-            this.rcbDeveloperUIMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.rcbDeveloperUIMode_Click);
+            this.rcbDeveloperUIMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperUIMode_Click);
             // 
             // grpHelp
             // 
@@ -197,13 +197,13 @@
             // 
             this.btnAddInInfo.Label = "AddIn Info";
             this.btnAddInInfo.Name = "btnAddInInfo";
-            this.btnAddInInfo.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAddInInfo_Click);
+            this.btnAddInInfo.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDisplayAddInInfo_Click);
             // 
             // btnDeveloperMode
             // 
             this.btnDeveloperMode.Label = "Developer Mode";
             this.btnDeveloperMode.Name = "btnDeveloperMode";
-            this.btnDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDeveloperMode_Click);
+            this.btnDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperMode_Click);
             // 
             // Ribbon
             // 
