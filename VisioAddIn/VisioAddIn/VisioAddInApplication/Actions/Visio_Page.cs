@@ -387,7 +387,7 @@ namespace VisioAddInApplication.Actions
             Page page = app.ActivePage;
 
             SyncPageNames(app, page);
-        }
+    }
 
         private static void SyncPageNames(Application app, Page page)
         {

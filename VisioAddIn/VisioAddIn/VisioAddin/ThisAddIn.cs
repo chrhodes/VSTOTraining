@@ -37,15 +37,15 @@
 
         void InitializeRibbonUI()
         {
-            Globals.Ribbons.Ribbon_VisioAddIn.rgDebug.Visible = Common.DeveloperMode = false;
+            Globals.Ribbons.Ribbon.rgDebug.Visible = Common.DeveloperMode = false;
 
-            Globals.Ribbons.Ribbon_VisioAddIn.rcbEnableAppEvents.Checked = Common.EnableAppEvents = false;
+            Globals.Ribbons.Ribbon.rcbEnableAppEvents.Checked = Common.EnableAppEvents = false;
 
             // NOTE(crhodes)
             // No need to display during normal operation.
             // More for understanding what Visio is doing during development.
-            Globals.Ribbons.Ribbon_VisioAddIn.rcbDisplayEvents.Checked = Common.DisplayEvents = false;
-            Globals.Ribbons.Ribbon_VisioAddIn.rcbDisplayChattyEvents.Checked = Common.DisplayChattyEvents = false;
+            Globals.Ribbons.Ribbon.rcbDisplayEvents.Checked = Common.DisplayEvents = false;
+            Globals.Ribbons.Ribbon.rcbDisplayChattyEvents.Checked = Common.DisplayChattyEvents = false;
         }
 
         #region VSTO generated code
