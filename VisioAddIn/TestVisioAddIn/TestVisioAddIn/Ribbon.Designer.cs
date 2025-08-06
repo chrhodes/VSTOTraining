@@ -7,11 +7,11 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public Ribbon()
-            : base(Globals.Factory.GetRibbonFactory())
-        {
-            InitializeComponent();
-        }
+        //public Ribbon()
+        //    : base(Globals.Factory.GetRibbonFactory())
+        //{
+        //    InitializeComponent();
+        //}
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -55,6 +55,8 @@
             this.grpHelp = this.Factory.CreateRibbonGroup();
             this.btnAddInInfo = this.Factory.CreateRibbonButton();
             this.btnDeveloperMode = this.Factory.CreateRibbonButton();
+            this.button1 = this.Factory.CreateRibbonButton();
+            this.button2 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.rtVisioAddInTemplate.SuspendLayout();
             this.rgDocumentActions.SuspendLayout();
@@ -86,7 +88,7 @@
             this.rtVisioAddInTemplate.Groups.Add(this.rgDebug);
             this.rtVisioAddInTemplate.Groups.Add(this.grpHelp);
             this.rtVisioAddInTemplate.Label = "TestVisioAddIn";
-            this.rtVisioAddInTemplate.Name = "rtVisioAddInTemplate";
+            this.rtVisioAddInTemplate.Name = "rtVisioAddIn";
             // 
             // rgDocumentActions
             // 
@@ -102,6 +104,8 @@
             // rgPageActions
             // 
             this.rgPageActions.Items.Add(this.rlPageActions);
+            this.rgPageActions.Items.Add(this.button1);
+            this.rgPageActions.Items.Add(this.button2);
             this.rgPageActions.Label = "Page Actions";
             this.rgPageActions.Name = "rgPageActions";
             // 
@@ -205,6 +209,18 @@
             this.btnDeveloperMode.Name = "btnDeveloperMode";
             this.btnDeveloperMode.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnToggleDeveloperMode_Click);
             // 
+            // button1
+            // 
+            this.button1.Label = "Add Page and Shapes";
+            this.button1.Name = "button1";
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Label = "Add Footer";
+            this.button2.Name = "button2";
+            this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -255,6 +271,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddInInfo;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDeveloperMode;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
     }
 
     partial class ThisRibbonCollection
